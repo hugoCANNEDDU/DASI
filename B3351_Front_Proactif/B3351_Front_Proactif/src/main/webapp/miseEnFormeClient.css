@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 5 mai 2019, 10:43:10
+    Author     : GRAZIA GIULIA
+*/
+       
+body {
+            font-family: Arial;
+            background-color: #bbb;
+            float : top;
+}
+
+.connect {
+          float: left;
+          overflow: auto;
+          border: 1px solid #999;
+          background-color: #bbb;
+        }
+        
+.connect div{
+  float: left;
+  overflow: auto;
+  border: 1px solid #999;
+  background-color: #ccc;
+}
+
+.Commentaire { 
+            background-color: #ccc;
+            float: left;
+            overflow: auto;
+            border: 1px solid #999;
+            padding: 50px 450px ;
+}
+
+
+.image1 { 
+            float: top;
+            border: 1px solid #999;
+            background-color: #aaa;
+}

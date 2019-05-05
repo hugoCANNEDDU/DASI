@@ -9,89 +9,21 @@ and open the template in the editor.
         <title>Employé</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            
-        body {
-            font-family: Arial;
-            background-color: #bbb;
-        }
-        
-        .connect {
-          float: left;
-          overflow: auto;
-          border: 1px solid #999;
-          background-color: #bbb;
-        }
-        .wb-tabs {
-          float: left;
-          overflow: hidden;
-          border: 1px solid #999;
-          background-color: #bbb;
-        }
-
-        /* Style the tab */
-        .tabpanels p{
-          overflow: auto;
-          border: 1px solid #999;
-          background-color: inherit;
-          padding: 10px;
-        }
-        .tabpanels summary{
-          overflow: hidden;
-          border: 1px solid #999;
-          background-color: inherit;
-          position: sticky; /*pour la garder avec le scrolll*/
-        }
-        .tabpanels details{
-          float: right;
-          overflow: auto;
-          border: 1px solid #999;
-          background-color: #bbb;
-        }
-
-        /* Style the buttons inside the tab */
-        .tabpanels button {
-          background-color: #ccc;
-          float: right;
-          border: 1px solid #aaa;
-          outline: none;
-          cursor: pointer;
-          padding: 14px 16px;
-          transition: 0.3s;
-          font-size: 14px;
-        }
-        
-        .tabpanels button:hover {
-          background-color: #9a3;
-          float: right;
-          border: 1px solid #9b4;
-          outline: none;
-          cursor: pointer;
-          padding: 14px 16px;
-          transition: 0.3s;
-          font-size: 14px;
-        }
-
-        /* Change background color of buttons on hover */
-        .tabpanels details:disabled{
-          background-color: #222;
-        }
-
-        /* Create an active/current tablink class */
-        .tabpanels details:hover{
-          background-color: #9da;
-        }
-
-        </style>    
+        <link rel="stylesheet" href="miseEnFormeEmploye.css" type="text/css" >   
     </head>
+    
     <body>
         <div class="connect"> 
-        Employé 
-        Nom : 
-        Prénom : 
+        <div><img src="Logo.JPG" align="center" height="90" width="90" /></div>
+        <div><img src="http://www.betterbet.it/img/user.png" align="center" height="90" width="90" /></div>
+        <div> Employé <br></br>
+        <div>Nom : xxx <div id="log"></div></div><br></br>
+        <div> Prénom : yyy <div id="pass"></div></div>
         <a href="index.html">Déconnexion</a>
         </div>
         <br></br>
+        </div>
+  
 <div class="wb-tabs">
 	<div class="tabpanels">
 		<details id="interventionEnCours" open="open">
@@ -145,7 +77,15 @@ and open the template in the editor.
          <script>
 
             function InfoPers() {
-                
+                var parameters = location.search.substring(1).split("&");
+
+                var temp = parameters[0].split("=");
+                l = unescape(temp[1]);
+                temp = parameters[1].split("=");
+                p = unescape(temp[1]);
+                document.getElementById("log").innerHTML = l;
+                document.getElementById("pass").innerHTML = p;
+            }
         </script>
 
     </body>

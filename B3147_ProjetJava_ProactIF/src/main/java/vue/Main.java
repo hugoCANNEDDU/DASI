@@ -39,7 +39,7 @@ public class Main {
         // Connexion Employé :
         // Mail : eX@proact.if ou X est compris entre 1 et 15 inclus
         // MdP : 0
-        //Init();
+        Init();
         boolean connecte = false;
         String mail = null;
         while (!connecte) {
