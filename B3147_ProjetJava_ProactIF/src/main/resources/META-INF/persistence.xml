@@ -10,10 +10,10 @@
     <class>modele.metier.InterventionLivraison</class>
     <class>modele.metier.Personne</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/proactif"/>
-      <property name="javax.persistence.jdbc.user" value="hugo"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/ProA"/>
+      <property name="javax.persistence.jdbc.user" value="ggr"/>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
-      <property name="javax.persistence.jdbc.password" value="azerty"/>
+      <property name="javax.persistence.jdbc.password" value="ggr"/>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
     </properties>
   </persistence-unit>
