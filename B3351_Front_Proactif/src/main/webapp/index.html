@@ -5,38 +5,46 @@
         <title>Exemple de page de login</title>
         <meta charset="UTF-8">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        
     </head>
+    
     <body>
-        
-        <div id="inscription">
-        <h1>S'inscrire</h1>
-        Identifiant : <input type="email" id="champ-identifiant" name="login" placeholder="identifiant" /><br>
-        Mot de passe : <input type="password" id="champ-mdp" name="password" placeholder="mot de passe" /><br>
-        Civilité : <input type="text" id="champ-civil" name="civil" placeholder="civilité" /><br>
-        Nom : <input type="text" id="champ-nom" name="nom" placeholder="nom" /><br>
-        Prénom : <input type="text" id="champ-prenom" name="prenom" placeholder="prénom" /><br>
-        Date de naissance : <input type="date" id="champ-date" name="date_naissance"/><br>
-        Domicile : <input type="text" id="champ-adresse" name="adresse" placeholder="adresse" /><br> 
-        Téléphone : <input type="text" id="champ-tel" name="telephone" placeholder="numéro de téléphone" /><br>
 
-        <button id="bouton-inscription">S'inscrire</button>
-        </div>
-        <br><br>
-        
-        <div id="connexion">
-        <h1>Se Connecter</h1>
-        Identifiant : <input type="email" id="champ-login" name="login" placeholder="votre identifiant" /><br>
-        Mot de passe : <input type="password" id="champ-password" name="password" /><br>
-        <button id="bouton-connexion">Se connecter</button>
-        </div>
-        
-        <div id="message"></div>
-        
+    <div class="wb-tabs">
+    <div class="tabpanels">
+        <div id="inscription">
+        <details id="S'inscrire" open="open">
+			<summary>S'inscrire</summary>
+			<p>
+				Identifiant : <input type="email" id="champ-login" name="login" placeholder="identifiant" /><br>
+                                Mot de passe : <input type="password" id="champ-password" name="password" placeholder="mot de passe" /><br>
+                                Civilité : <input type="text" id="champ-civil" name="civil" placeholder="civilité" /><br>
+                                Nom : <input type="text" id="champ-nom" name="nom" placeholder="nom" /><br>
+                                Prénom : <input type="text" id="champ-prenom" name="prenom" placeholder="prénom" /><br>
+                                Date de naissance : <input type="date" id="champ-date" name="date_naissance"/><br>
+                                Domicile : <input type="text" id="champ-adresse" name="adresse" placeholder="adresse" /><br> 
+                                Téléphone : <input type="text" id="champ-tel" name="telephone" placeholder="numéro de téléphone" /><br>
+
+                                <button id="bouton-inscription">S'inscrire</button>
+			</p>
+		</details>
+                <details id="connexion">
+			<summary>Connexion</summary>
+			<p>
+				Identifiant : <input type="email" id="champ-login" name="login" placeholder="votre identifiant" /><br>
+                                Mot de passe : <input type="password" id="champ-password" name="password" /><br>
+                                <button id="bouton-connexion">Se connecter</button>
+			</p>
+		</details>
+        </div>               
+	</div>
+	<!--<p class="mrgn-tp-md"><a href="#details-panel3" class="wb-tabs-ext">Voir le troisième panneau</a></p>-->
+</div>      
         
         <script>
 
             function connexion() {
-                var champLogin = $('#champ-login').val();
+                var champLogin = $('#connexion.champ-login').val();
                 var champPassword = $('#champ-password').val();
 
                 $('#message').html('Connexion en cours...');
@@ -55,7 +63,7 @@
                     
                     // si connexion ok, aller sur la page suivante :
                     if(bool){
-                        window.location = "page2.html";
+                        window.location = "homeEmploye.html";
                     }else{
                         // si connexion pas ok afficher un texte dans la div message :
                         $('#message').html('Echec de la connexion');
