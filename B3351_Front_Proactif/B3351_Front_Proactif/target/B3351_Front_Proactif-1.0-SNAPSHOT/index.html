@@ -63,7 +63,10 @@
                     
                     // si connexion ok, aller sur la page suivante :
                     if(bool){
-                        window.location = "homeEmploye.html";/*?login=champLogin&password=champPassword";*/
+                        window.location = "homeEmploye.html?login=champLogin&password=champPassword";
+                        /*c'est pour passer des paramètres à la page suivante, ils seront 
+                         * recupérés par une fonction à l'arrivée
+                         */
                     }else{
                         // si connexion pas ok afficher un texte dans la div message :
                         $('#message').html('Echec de la connexion');

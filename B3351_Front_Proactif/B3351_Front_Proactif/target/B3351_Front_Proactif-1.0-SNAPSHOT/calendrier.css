@@ -13,12 +13,12 @@ and open the template in the editor.
 {
     border:1px solid black;
     padding:1px;
-    background-color:#4594ff;
+    background-color: #aaa;/*#4594ff;*/
     width:250px;
     margin:auto;
     height:200px;
     float: left;
-    background-image:url('http://www.supportduweb.com/ftp/ybouane/scripts_astuces/javascript/calendrier/fond-250-200.gif');
+    /*background-image:url('http://www.supportduweb.com/ftp/ybouane/scripts_astuces/javascript/calendrier/fond-250-200.gif');*/
 }
 .cal_calendrier th
 {
@@ -39,3 +39,14 @@ and open the template in the editor.
 {
     color:#5a779e;
 }
+
+.cal_calendrier td:hover {
+          background-color: #aaa;
+          float: right;
+          border: 1px solid #9b4;
+          outline: none;
+          /*cursor: pointer;*/
+          padding: 8px 8px;
+          transition: 0.3s;
+          font-size: 14px;
+        }
