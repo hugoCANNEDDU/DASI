@@ -1,0 +1,70 @@
+<svg id="Principal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 926 669">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#000;stroke-miterlimit:10;}
+            .cls-2{fill:#fff;}.cls-11,.cls-3{font-size:36px;}
+            .cls-3{font-family:HandsDown;}.cls-4{letter-spacing:0.06em;}
+            .cls-5{letter-spacing:-0.05em;}.cls-6{letter-spacing:-0.09em;}
+            .cls-7{letter-spacing:-0.15em;}.cls-8{letter-spacing:0.17em;}
+            .cls-9{letter-spacing:0em;}.cls-10{fill:#ffbe78;}
+            .cls-11{font-family:Roboto-BoldCondensed, Roboto;font-weight:700;}
+            .cls-12{fill:#aee0a2;}.cls-13{fill:#fdf57a;}
+            .cls-14{letter-spacing:-0.01em;}
+            .cls-15{fill:#ffb0cd;}
+            .cls-16{fill:#8ccbf9;}
+            .cls-17{letter-spacing:-0.01em;}
+        </style>
+    </defs>
+    <title>Accueil_ProactIF</title>
+    <g id="ligne">
+        <line class="cls-1" x1="236.5" y1="100.5" x2="462.5" y2="309.5"/>
+        <line class="cls-1" x1="692.5" y1="100.5" x2="462.5" y2="309.5"/>
+        <line class="cls-1" x1="462.5" y1="586.5" x2="462.5" y2="309.5"/>
+        <line class="cls-1" x1="148.5" y1="413.5" x2="462.5" y2="309.5"/>
+        <line class="cls-1" x1="775.5" y1="413.5" x2="462.5" y2="309.5"/>
+    </g>
+    <g id="Centre">
+        <ellipse class="cls-2" cx="462" cy="309" rx="149.5" ry="99.5"/>
+        <path d="M490,441c82.16,0,149,44.41,149,99s-66.84,99-149,99-149-44.41-149-99,66.84-99,149-99m0-1c-82.84,0-150,44.77-150,100s67.16,100,150,100,150-44.77,150-100S572.84,440,490,440Z" transform="translate(-28 -231)"/>
+        <text class="cls-3" transform="translate(360.08 317.53)">
+            <tspan class="cls-4">P</tspan>
+            <tspan class="cls-5" x="25.85" y="0">R</tspan>
+            <tspan class="cls-6" x="43.2" y="0">O</tspan>
+            <tspan class="cls-7" x="63.58" y="0">A</tspan>
+            <tspan x="86.22" y="0">CT’</tspan>
+            <tspan class="cls-8" x="154.04" y="0">I</tspan>
+            <tspan class="cls-9" x="177.98" y="0">F</tspan>
+        </text>
+    </g>
+    <g id="nous_contacter">
+        <ellipse class="cls-10" cx="150" cy="413" rx="149.5" ry="99.5"/>
+        <path d="M178,545c82.16,0,149,44.41,149,99s-66.84,99-149,99S29,698.59,29,644s66.84-99,149-99m0-1C95.16,544,28,588.77,28,644S95.16,744,178,744s150-44.77,150-100S260.84,544,178,544Z" transform="translate(-28 -231)"/>
+        <text class="cls-11" transform="translate(39.52 424.04)">Nous Contacter</text>
+    </g>
+    <g id="confidentialité">
+        <ellipse class="cls-12" cx="462" cy="569" rx="149.5" ry="99.5"/>
+        <path d="M490,701c82.16,0,149,44.41,149,99s-66.84,99-149,99-149-44.41-149-99,66.84-99,149-99m0-1c-82.84,0-150,44.77-150,100s67.16,100,150,100,150-44.77,150-100S572.84,700,490,700Z" transform="translate(-28 -231)"/>
+        <text class="cls-11" transform="translate(359.52 579.52)">confidentialité</text>
+    </g>
+    <g id="environnment">
+        <ellipse class="cls-13" cx="776" cy="413" rx="149.5" ry="99.5"/>
+        <path d="M804,545c82.16,0,149,44.41,149,99s-66.84,99-149,99-149-44.41-149-99,66.84-99,149-99m0-1c-82.84,0-150,44.77-150,100s67.16,100,150,100,150-44.77,150-100S886.84,544,804,544Z" transform="translate(-28 -231)"/>
+        <text class="cls-11" transform="translate(669.59 423.52)">Envi<tspan class="cls-14" x="60.1" y="0">r</tspan>
+            <tspan x="70.95" y="0">onnement</tspan>
+        </text>
+    </g>
+    <g id="obectifs">
+        <ellipse class="cls-15" cx="692" cy="100" rx="149.5" ry="99.5"/>
+        <path d="M720,232c82.16,0,149,44.41,149,99s-66.84,99-149,99-149-44.41-149-99,66.84-99,149-99m0-1c-82.84,0-150,44.77-150,100s67.16,100,150,100,150-44.77,150-100S802.84,231,720,231Z" transform="translate(-28 -231)"/>
+        <text class="cls-11" transform="translate(628.24 110.52)">Objectifs</text>
+    </g>
+    <g id="notre_histoire">
+        <ellipse class="cls-16" cx="236" cy="100" rx="149.5" ry="99.5"/>
+        <path d="M264,232c82.16,0,149,44.41,149,99s-66.84,99-149,99-149-44.41-149-99,66.84-99,149-99m0-1c-82.84,0-150,44.77-150,100s67.16,100,150,100,150-44.77,150-100S346.84,231,264,231Z" transform="translate(-28 -231)"/>
+        <text class="cls-11" transform="translate(137.08 110.52)">Not<tspan class="cls-17" x="50.96" y="0">r</tspan>
+            <tspan x="61.82" y="0">e Histoi</tspan>
+            <tspan class="cls-17" x="170.51" y="0">r</tspan>
+            <tspan x="181.37" y="0">e</tspan>
+        </text>
+    </g>
+</svg>

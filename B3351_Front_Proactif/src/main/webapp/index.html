@@ -2,47 +2,113 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Exemple de page de login</title>
+        <title>Bienvenue sur Proact'IF</title>
         <meta charset="UTF-8">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="CSS/indexStyle.css" />
         
     </head>
     
     <body>
+        <div id="accordion_tab">
+            <button class="accordion">S'inscrire</button>
+            <div class="panel">
+                Identifiant : <input type="email" id="champ-login" name="login" placeholder="identifiant" /><br>
+                Mot de passe : <input type="password" id="champ-password" name="password" placeholder="mot de passe" /><br>
+                Civilité : <input type="text" id="champ-civil" name="civil" placeholder="civilité" /><br>
+                Nom : <input type="text" id="champ-nom" name="nom" placeholder="nom" /><br>
+                Prénom : <input type="text" id="champ-prenom" name="prenom" placeholder="prénom" /><br>
+                Date de naissance : <input type="date" id="champ-date" name="date_naissance"/><br>
+                Domicile : <input type="text" id="champ-adresse" name="adresse" placeholder="adresse" /><br> 
+                Téléphone : <input type="text" id="champ-tel" name="telephone" placeholder="numéro de téléphone" /><br>
 
-    <div class="wb-tabs">
-    <div class="tabpanels">
-        <div id="inscription">
-        <details id="S'inscrire" open="open">
-			<summary>S'inscrire</summary>
-			<p>
-				Identifiant : <input type="email" id="champ-login" name="login" placeholder="identifiant" /><br>
-                                Mot de passe : <input type="password" id="champ-password" name="password" placeholder="mot de passe" /><br>
-                                Civilité : <input type="text" id="champ-civil" name="civil" placeholder="civilité" /><br>
-                                Nom : <input type="text" id="champ-nom" name="nom" placeholder="nom" /><br>
-                                Prénom : <input type="text" id="champ-prenom" name="prenom" placeholder="prénom" /><br>
-                                Date de naissance : <input type="date" id="champ-date" name="date_naissance"/><br>
-                                Domicile : <input type="text" id="champ-adresse" name="adresse" placeholder="adresse" /><br> 
-                                Téléphone : <input type="text" id="champ-tel" name="telephone" placeholder="numéro de téléphone" /><br>
+                <button id="bouton-inscription" class="bouton">S'inscrire</button>
+            </div>
+            <button class="accordion" >Se Connceter</button>
+            <div class="panel">
+                Identifiant : <br><input type="email" id="champ-login" name="login" placeholder=" e-mail" /><br>
+                Mot de passe : <br><input type="password" id="champ-password" name="password" />
 
-                                <button id="bouton-inscription">S'inscrire</button>
-			</p>
-		</details>
-                <details id="connexion">
-			<summary>Connexion</summary>
-			<p>
-				Identifiant : <input type="email" id="champ-login" name="login" placeholder="votre identifiant" /><br>
-                                Mot de passe : <input type="password" id="champ-password" name="password" /><br>
-                                <button id="bouton-connexion">Se connecter</button>
-			</p>
-		</details>
-        </div>               
-	</div>
-	<!--<p class="mrgn-tp-md"><a href="#details-panel3" class="wb-tabs-ext">Voir le troisième panneau</a></p>-->
-</div>      
+                <button id="bouton-connexion" class="bouton">&#x2713</button>
+                <div id="message">.</div>
+            </div>
+        </div>
         
-        <script>
+        <div id="image">
+            <svg id="Principal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 926 669" width="60%" height="100%">
+                <defs>
+                    <style>
+                        .cls-1{fill:none;stroke:#000;stroke-miterlimit:10;}
+                        .cls-2{fill:#fff;}.cls-11,.cls-3{font-size:36px;}
+                        .cls-3{font-family:HandsDown;}.cls-4{letter-spacing:0.06em;}
+                        .cls-5{letter-spacing:-0.05em;}.cls-6{letter-spacing:-0.09em;}
+                        .cls-7{letter-spacing:-0.15em;}.cls-8{letter-spacing:0.17em;}
+                        .cls-9{letter-spacing:0em;}.cls-10{fill:#ffbe78;}
+                        .cls-11{font-family:Roboto-BoldCondensed, Roboto;font-weight:700;}
+                        .cls-12{fill:#aee0a2;}.cls-13{fill:#fdf57a;}
+                        .cls-14{letter-spacing:-0.01em;}
+                        .cls-15{fill:#ffb0cd;}
+                        .cls-16{fill:#8ccbf9;}
+                        .cls-17{letter-spacing:-0.01em;}
+                    </style>
+                </defs>
+                <title>Accueil_ProactIF</title>
+                <g id="ligne">
+                    <line class="cls-1" x1="236.5" y1="100.5" x2="462.5" y2="309.5"/>
+                    <line class="cls-1" x1="692.5" y1="100.5" x2="462.5" y2="309.5"/>
+                    <line class="cls-1" x1="462.5" y1="586.5" x2="462.5" y2="309.5"/>
+                    <line class="cls-1" x1="148.5" y1="413.5" x2="462.5" y2="309.5"/>
+                    <line class="cls-1" x1="775.5" y1="413.5" x2="462.5" y2="309.5"/>
+                </g>
+                <g id="Centre">
+                    <ellipse class="cls-2" cx="462" cy="309" rx="149.5" ry="99.5"/>
+                    <path d="M490,441c82.16,0,149,44.41,149,99s-66.84,99-149,99-149-44.41-149-99,66.84-99,149-99m0-1c-82.84,0-150,44.77-150,100s67.16,100,150,100,150-44.77,150-100S572.84,440,490,440Z" transform="translate(-28 -231)"/>
+                    <text class="cls-3" transform="translate(360.08 317.53)">
+                        <tspan class="cls-4">P</tspan>
+                        <tspan class="cls-5" x="25.85" y="0">R</tspan>
+                        <tspan class="cls-6" x="43.2" y="0">O</tspan>
+                        <tspan class="cls-7" x="63.58" y="0">A</tspan>
+                        <tspan x="86.22" y="0">CT’</tspan>
+                        <tspan class="cls-8" x="154.04" y="0">I</tspan>
+                        <tspan class="cls-9" x="177.98" y="0">F</tspan>
+                    </text>
+                </g>
+                <g id="nous_contacter">
+                    <ellipse class="cls-10" cx="150" cy="413" rx="149.5" ry="99.5"/>
+                    <path d="M178,545c82.16,0,149,44.41,149,99s-66.84,99-149,99S29,698.59,29,644s66.84-99,149-99m0-1C95.16,544,28,588.77,28,644S95.16,744,178,744s150-44.77,150-100S260.84,544,178,544Z" transform="translate(-28 -231)"/>
+                    <text class="cls-11" transform="translate(39.52 424.04)">Nous Contacter</text>
+                </g>
+                <g id="confidentialité">
+                    <ellipse class="cls-12" cx="462" cy="569" rx="149.5" ry="99.5"/>
+                    <path d="M490,701c82.16,0,149,44.41,149,99s-66.84,99-149,99-149-44.41-149-99,66.84-99,149-99m0-1c-82.84,0-150,44.77-150,100s67.16,100,150,100,150-44.77,150-100S572.84,700,490,700Z" transform="translate(-28 -231)"/>
+                    <text class="cls-11" transform="translate(359.52 579.52)">confidentialité</text>
+                </g>
+                <g id="environnment">
+                    <ellipse class="cls-13" cx="776" cy="413" rx="149.5" ry="99.5"/>
+                    <path d="M804,545c82.16,0,149,44.41,149,99s-66.84,99-149,99-149-44.41-149-99,66.84-99,149-99m0-1c-82.84,0-150,44.77-150,100s67.16,100,150,100,150-44.77,150-100S886.84,544,804,544Z" transform="translate(-28 -231)"/>
+                    <text class="cls-11" transform="translate(669.59 423.52)">Envi<tspan class="cls-14" x="60.1" y="0">r</tspan>
+                        <tspan x="70.95" y="0">onnement</tspan>
+                    </text>
+                </g>
+                <g id="obectifs">
+                    <ellipse class="cls-15" cx="692" cy="100" rx="149.5" ry="99.5"/>
+                    <path d="M720,232c82.16,0,149,44.41,149,99s-66.84,99-149,99-149-44.41-149-99,66.84-99,149-99m0-1c-82.84,0-150,44.77-150,100s67.16,100,150,100,150-44.77,150-100S802.84,231,720,231Z" transform="translate(-28 -231)"/>
+                    <text class="cls-11" transform="translate(628.24 110.52)">Objectifs</text>
+                </g>
+                <g id="notre_histoire">
+                    <ellipse class="cls-16" cx="236" cy="100" rx="149.5" ry="99.5"/>
+                    <path d="M264,232c82.16,0,149,44.41,149,99s-66.84,99-149,99-149-44.41-149-99,66.84-99,149-99m0-1c-82.84,0-150,44.77-150,100s67.16,100,150,100,150-44.77,150-100S346.84,231,264,231Z" transform="translate(-28 -231)"/>
+                    <text class="cls-11" transform="translate(137.08 110.52)">Not<tspan class="cls-17" x="50.96" y="0">r</tspan>
+                        <tspan x="61.82" y="0">e Histoi</tspan>
+                        <tspan class="cls-17" x="170.51" y="0">r</tspan>
+                        <tspan x="181.37" y="0">e</tspan>
+                    </text>
+                </g>
+            </svg>
+        </div>
 
+        <script src ="JS/accordionJS.js" type="text/javascript"></script>
+        <script>
             function connexion() {
                 var champLogin = $('#connexion.champ-login').val();
                 var champPassword = $('#champ-password').val();

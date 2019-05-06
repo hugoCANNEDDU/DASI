@@ -1,0 +1,79 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 6 mai 2019, 21:16:53
+    Author     : hcann
+*/
+
+/* Style the buttons that are used to open and close the accordion panel */
+body{
+    letter-spacing: 0.1vw;
+}
+#accordion_tab{
+    float : right;
+    width: 30%;
+}
+.accordion {
+    background-color: white;
+    color: #444;
+    cursor: pointer;
+    width: 100%;
+    padding: 1vw;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-size: 4vh;
+}
+
+.accordion:after {
+  content: '\02C5'; /* Unicode character for "plus" sign (+) */
+  font-size: 5vh;
+  color: #14B9D3;
+  float: right;
+  margin-left: 1vw;
+}
+
+.active:after {
+  content: "\02C4"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+    background-color: #cccccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 1vw;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  font-size: 4vh;
+  line-height: 4.2vh;
+}
+
+.bouton{
+    background-color:#C0F6FF;
+    color:#14B9D3;
+    font-size: 3vh;
+    border: none;
+    border-radius:0.5vh;
+}
+
+#bouton-connexion{
+    border-radius:4vh;
+    text-decoration : none;
+    width:4vh;
+    height:4vh;
+}
+
+input{
+    width:50%;
+    font-size: 2.8vh;
+    border-radius: 0.5vh;
+}
