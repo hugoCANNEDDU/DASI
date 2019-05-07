@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import static modele.service.Service.Authentification;
+import static modele.service.Service.trouverEmployeParMail;
 import javax.servlet.http.HttpSession;
+import modele.metier.Employe;
 
 /**
  *
@@ -57,12 +59,16 @@ public class ActionServlet extends HttpServlet {
             if("connecter".equals(action)){
                 String login = request.getParameter("login");
                 String password = (String)request.getParameter("password");
-                if(Authentification(login, password)){
+                if(Authentification(login,password)){
                     session.setAttribute("utilisateur", login);
                     out.println("{\"connexion\":true}");
                 }else{
                     out.println("{\"connexion\":false}");
                 }
+            }else if("recupererLogin".equals(action)){
+                Employe e=trouverEmployeParMail((String) session.getAttribute("utilisateur"));
+                String email=e.getMail();
+                out.println("{\"mail\":\""+email+"\"}");
             }
         }
     }
