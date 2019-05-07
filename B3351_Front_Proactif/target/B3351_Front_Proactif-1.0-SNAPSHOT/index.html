@@ -13,8 +13,8 @@
         <div id="accordion_tab">
             <button class="accordion">S'inscrire</button>
             <div class="panel">
-                Identifiant : <input type="email" id="champ-email" name="login" placeholder="identifiant" /><br>
-                Mot de passe : <input type="password" id="champ-mdp" name="password" placeholder="mot de passe" /><br>
+                Identifiant : <input type="email" id="champ-login" name="login" placeholder="identifiant" /><br>
+                Mot de passe : <input type="password" id="champ-password" name="password" placeholder="mot de passe" /><br>
                 Civilité : <input type="text" id="champ-civil" name="civil" placeholder="civilité" /><br>
                 Nom : <input type="text" id="champ-nom" name="nom" placeholder="nom" /><br>
                 Prénom : <input type="text" id="champ-prenom" name="prenom" placeholder="prénom" /><br>
@@ -110,7 +110,7 @@
         <script src ="JS/accordionJS.js" type="text/javascript"></script>
         <script>
             function connexion() {
-                var champLogin = $('#champ-login').val();
+                var champLogin = $('#connexion.champ-login').val();
                 var champPassword = $('#champ-password').val();
 
                 $('#message').html('Connexion en cours...');
@@ -130,42 +130,10 @@
                     // si connexion ok, aller sur la page suivante :
                     if(bool){
                         window.location = "homeEmploye.html";
-                        //"homeEmploye.html?login=champLogin&password=champPassword"
                     }else{
                         // si connexion pas ok afficher un texte dans la div message :
                         $('#message').html('Echec de la connexion');
                     }
-                });
-            }
-            
-            function inscription(){
-                var champEmail = $('#champ-email');
-                var champMdp = $('#champ-mdp');
-                var champcivil = $('#champ-civil');
-                var champnom = $('#champ-nom');
-                var champprenom = $('#champ-prenom');
-                var champdate = $('#champ-date');
-                var champadresse = $('#champ-adresse');
-                var champtel = $('#champ-tel');
-                
-                $.ajax({
-                    url: './ActionServlet',
-                    method: 'POST',
-                    data: {
-                        action: 'inscrire',
-                        email: champEmail,
-                        mdp: champMdp,
-                        civil: champcivil,
-                        nom: champnom,
-                        prenom: champprenom,
-                        date: champdate,
-                        adresse: champadresse,
-                        tel: champtel
-                    },
-                    dataType: 'json'
-                }).done(function (data) {
-                    var bool = data.connexion;
-                    
                 });
             }
 
