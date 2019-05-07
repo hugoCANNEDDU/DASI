@@ -1,1 +1,5 @@
-ActionServlet.class
+webapp\serialisation\Serialisation.class
+webapp\serialisation\retourConnecter.class
+webapp\action\Action.class
+webapp\ActionServlet.class
+webapp\action\actionConnecter.class
