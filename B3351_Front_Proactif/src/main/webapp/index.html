@@ -13,8 +13,8 @@
         <div id="accordion_tab">
             <button class="accordion">S'inscrire</button>
             <div class="panel">
-                Identifiant : <input type="email" id="champ-login" name="login" placeholder="identifiant" /><br>
-                Mot de passe : <input type="password" id="champ-password" name="password" placeholder="mot de passe" /><br>
+                Identifiant : <input type="email" id="champ-email" name="login" placeholder="identifiant" /><br>
+                Mot de passe : <input type="password" id="champ-mdp" name="password" placeholder="mot de passe" /><br>
                 Civilité : <input type="text" id="champ-civil" name="civil" placeholder="civilité" /><br>
                 Nom : <input type="text" id="champ-nom" name="nom" placeholder="nom" /><br>
                 Prénom : <input type="text" id="champ-prenom" name="prenom" placeholder="prénom" /><br>
@@ -110,7 +110,7 @@
         <script src ="JS/accordionJS.js" type="text/javascript"></script>
         <script>
             function connexion() {
-                var champLogin = $('#connexion.champ-login').val();
+                var champLogin = $('#champ-login').val();
                 var champPassword = $('#champ-password').val();
 
                 $('#message').html('Connexion en cours...');
@@ -126,7 +126,7 @@
                     dataType: 'json'
                 }).done(function (data) {
                     var bool = data.connexion;
-                    
+                    console.log(data.connexion);
                     // si connexion ok, aller sur la page suivante :
                     if(bool){
                         window.location = "homeEmploye.html";
