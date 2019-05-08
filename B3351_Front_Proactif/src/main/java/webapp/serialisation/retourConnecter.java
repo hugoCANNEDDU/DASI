@@ -21,7 +21,7 @@ public class retourConnecter extends Serialisation{
     @Override
     public void serialiser(HttpServletRequest request, HttpServletResponse response)throws IOException{
         JsonObject jsonContainer=new JsonObject();
-        jsonContainer.addProperty("connexion",(String)request.getAttribute("connected"));
+        jsonContainer.addProperty("type",(String)request.getAttribute("type"));
         
         PrintWriter out = this.getWriterWithJsonHeader(response);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();

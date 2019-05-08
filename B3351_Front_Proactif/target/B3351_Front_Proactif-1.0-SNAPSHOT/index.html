@@ -23,14 +23,16 @@
                 Téléphone : <input type="text" id="champ-tel" name="telephone" placeholder="numéro de téléphone" /><br>
 
                 <button id="bouton-inscription" class="bouton">S'inscrire</button>
+                
+                <div id="messageInscription" class="errorText">.</div>
             </div>
             <button class="accordion" >Se Connceter</button>
             <div class="panel">
                 Identifiant : <br><input type="email" id="champ-login" name="login" value="e1@proact.if" /><br>
                 Mot de passe : <br><input type="password" id="champ-password" name="password" />
 
-                <button id="bouton-connexion" class="bouton">&#x2713</button>
-                <div id="message">.</div>
+                <button id="bouton-connexion" class="bouton">&#x2713;</button>
+                <div id="message" class="errorText">.</div>
             </div>
         </div>
         
@@ -125,14 +127,53 @@
                     },
                     dataType: 'json'
                 }).done(function (data) {
-                    var bool = data.connexion;
-                    console.log(data.connexion);
+                    var type = data.type;
+                    console.log(data.type);
                     // si connexion ok, aller sur la page suivante :
-                    if(bool){
+                    if(type==="employe"){
                         window.location = "homeEmploye.html";
+                    }else if (type==="client"){
+                        window.location = "homeClient.html";
                     }else{
                         // si connexion pas ok afficher un texte dans la div message :
                         $('#message').html('Echec de la connexion');
+                    }
+                });
+            }
+            
+            function inscription(){
+                var champemail = $('champ-email').val();
+                var champmdp = $('champ-mdp').val();
+                var champcivil = $('champ-civil').val();
+                var champnom = $('champ-nom').val();
+                var champprenom = $('champ-prenom').val();
+                var champdate = $('champ-date').val();
+                var champadresse = $('champ-adresse').val();
+                var champtel = $('champ-tel').val();
+                
+                $.ajax({
+                    url: './ActionServlet',
+                    method: 'POST',
+                    data: {
+                        todo: 'inscrire',
+                        email: champemail,
+                        mdp: champmdp,
+                        civil: champcivil,
+                        nom: champnom,
+                        prenom: champprenom,
+                        date: champdate,
+                        adresse: champadresse,
+                        tel: champtel
+                    },
+                    dataType: 'json'
+                }).done(function(data){
+                    var type = data.type;
+                    console.log(data.type);
+                    // si connexion ok, aller sur la page suivante :
+                    if (type==="client"){
+                        window.location = "homeClient.html";
+                    }else{
+                         $('#messageInscription').html('Echec de l\'insciption');
                     }
                 });
             }
@@ -144,6 +185,12 @@
                     console.log('Click sur le bouton "Se Connecter"');
                     // appel de la fonction connexion
                     connexion();
+                });
+                 $('#bouton-inscription').on('click', function () {
+                    // affichage pour debugage dans la console javascript du navigateur
+                    console.log('Click sur le bouton "S\'inscrire"');
+                    // appel de la fonction connexion
+                    inscription();
                 });
             });
             

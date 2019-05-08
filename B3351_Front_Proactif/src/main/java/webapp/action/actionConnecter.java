@@ -5,9 +5,12 @@
  */
 package webapp.action;
 
-import webapp.action.Action;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import modele.metier.Personne;
 import static modele.service.Service.Authentification;
+import static modele.service.Service.trouverClientParMail;
+import static modele.service.Service.trouverEmployeParMail;
 
 
 /**
@@ -16,16 +19,27 @@ import static modele.service.Service.Authentification;
  */
 public class actionConnecter extends Action{
     @Override
-    public boolean executer(HttpServletRequest request){
+    public boolean executer(HttpServletRequest request, HttpSession session){
         
         String login = request.getParameter("login");
         String password = (String)request.getParameter("password");
-        String result = "false";
+        String type="null";
         if(Authentification(login,password)){
-            result="true";
+            Personne connectedUser  = null;
+            connectedUser = trouverClientParMail(login);
+            if(connectedUser == null){
+                connectedUser = trouverEmployeParMail(login);
+            }
+            if(connectedUser.isEmploye()){
+                type="employe";
+            }else{
+                type="client";
+            }
+            session.setAttribute("login", login);
+            session.setAttribute("type",type);
         }
-        
-        request.setAttribute("connected", result);
+       
+        request.setAttribute("type", type);
     
         return true;
     }

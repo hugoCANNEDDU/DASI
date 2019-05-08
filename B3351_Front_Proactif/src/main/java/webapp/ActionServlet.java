@@ -22,6 +22,7 @@ import javax.servlet.http.HttpSession;
 import modele.metier.Employe;
 import webapp.action.Action;
 import webapp.action.actionConnecter;
+import webapp.action.actionInscrire;
 import webapp.serialisation.Serialisation;
 import webapp.serialisation.retourConnecter;
 
@@ -67,10 +68,20 @@ public class ActionServlet extends HttpServlet {
         switch(todo){
             case "connecter":
                 action = new actionConnecter();
-                action.executer(request);
                 serialisation = new retourConnecter();
-                serialisation.serialiser(request, response);
                 break;
+            case "inscrire":
+                action = new actionInscrire();
+                serialisation = new retourConnecter();
+                break;
+                
+        }
+        
+        if(action==null){
+            response.sendError(400,"Bad Request (wrong TODO parameter)");
+        }else{
+            action.executer(request, session);
+            serialisation.serialiser(request, response);
         }
         
         
