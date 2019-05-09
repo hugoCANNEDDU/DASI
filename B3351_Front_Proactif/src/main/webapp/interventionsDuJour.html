@@ -9,6 +9,7 @@ and open the template in the editor.
         <title>interventionsDuJour</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <link rel="stylesheet" href="miseEnFormeEmploye.css" type="text/css" >  
     </head>
      <body>
@@ -33,8 +34,8 @@ and open the template in the editor.
             </svg>
         </div>
         <div><img src="http://www.betterbet.it/img/user.png" align="center" height="58" width="50" /></div>
-        <div> Employé <br></br>
-        <div id="mail"></div><br></br>
+        <div> Employé
+        <span id="mail"></span>
         </div>
         <a href="index.html">Déconnexion</a>
  
@@ -60,7 +61,7 @@ and open the template in the editor.
                     url: './ActionServlet',
                     method: 'POST',
                     data: {
-                        action: 'recupererLogin'
+                        todo: 'recupererInfo'
                     },
                     dataType: 'json'
                 }).done(function (data) {

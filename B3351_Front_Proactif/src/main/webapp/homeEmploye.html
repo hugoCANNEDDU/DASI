@@ -36,7 +36,7 @@ and open the template in the editor.
         </div>
         <div><img src="http://www.betterbet.it/img/user.png" align="center" height="58" width="50" /></div>
         <div> Employé
-        <div id="mail"></div>
+        <span id="mail"></span>
         </div>
         <a href="index.html">Déconnexion</a>
     </div>
@@ -60,7 +60,7 @@ and open the template in the editor.
                     url: './ActionServlet',
                     method: 'POST',
                     data: {
-                        action: 'recupererLogin'
+                        todo: 'recupererInfo'
                     },
                     dataType: 'json'
                 }).done(function (data) {

@@ -9,6 +9,7 @@ and open the template in the editor.
         <title>informationsPersonnelles</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <link rel="stylesheet" href="miseEnFormeEmploye.css" type="text/css" >  
     </head>
      <body>
@@ -32,9 +33,9 @@ and open the template in the editor.
                 </g>
             </svg>
         </div>
-        <div><img src="http://www.betterbet.it/img/user.png" align="center" height="58" width=50" /></div>
-        <div> Employé <br></br>
-        <div id="mail"></div><br></br>
+        <div><img src="http://www.betterbet.it/img/user.png" align="center" height="58" width="50" /></div>
+        <div> Employé
+        <span id="mail"></span>
         </div>
         <a href="index.html">Déconnexion</a>
  
@@ -48,13 +49,13 @@ and open the template in the editor.
             <li style="background-color:#CCCCCC"><a href="informationsPersonnelles.html">INFORMATIONS PERSONNELLES</a></li>
         </ul>
         <div class="panel">
-                Identifiant : <label for="identifiant"></label><br></br>
-                Mot de passe : <label for="mdp"></label><br></br>
-                Civilité : <label for="civ"></label><br></br>
-                Nom : <label for="nom"></label><br></br>
-                Prénom : <label for="prenom"></label><br></br>
-                Date de naissance : <label for="date"></label><br></br>
-                Domicile : <label for="dom"></label><br></br>
+                Identifiant : <label for="identifiant"></label><br>
+                Mot de passe : <label for="mdp"></label><br>
+                Civilité : <label for="civ"></label><br>
+                Nom : <label for="nom"></label><br>
+                Prénom : <label for="prenom"></label><br>
+                Date de naissance : <label for="date"></label><br>
+                Domicile : <label for="dom"></label><br>
                 Téléphone : <label for="tel"></label>
         </div>
     </nav>
@@ -69,7 +70,7 @@ and open the template in the editor.
                     url: './ActionServlet',
                     method: 'POST',
                     data: {
-                        action: 'recupererLogin'
+                        todo: 'recupererInfo'
                     },
                     dataType: 'json'
                 }).done(function (data) {
