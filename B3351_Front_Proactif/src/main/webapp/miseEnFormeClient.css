@@ -10,7 +10,7 @@ and open the template in the editor.
        
 body {
             font-family: Arial;
-            background-color: #bbb;
+            background-color: #FFFACD;
             float : top;
 }
 
@@ -18,14 +18,14 @@ body {
           float: left;
           overflow: auto;
           border: 1px solid #999;
-          background-color: #bbb;
+          background-color: inherit;
         }
         
 .connect div{
   float: left;
   overflow: auto;
   border: 1px solid #999;
-  background-color: #ccc;
+  background-color: inherit;
 }
 
 .Commentaire { 
@@ -40,5 +40,5 @@ body {
 .image1 { 
             float: top;
             border: 1px solid #999;
-            background-color: #aaa;
+            background-color: inherit;
 }

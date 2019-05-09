@@ -12,88 +12,62 @@ and open the template in the editor.
             
         body {
             font-family: Arial;
-            background-color: #bbb;
+            background-color: #FFFACD;
+            float: start;
         }
         
-        .div{
+        /*.div{
           float: top;
           overflow: auto;
-        }
+        }*/
         
         .connect {
-          float: left;
+          float: bottom;
           overflow: auto;
-          border: 1px solid #999;
-          background-color: #bbb;
+          background-color: inherit;
+        }
+        
+        .connect panel{
+          float: bottom;
+          overflow: auto;
+          background-color: inherit;
         }
         
         .connect div{
           float: left;
-          overflow: auto;
-          border: 1px solid #999;
-          background-color: #ccc;
+          overflow: hidden;
+          background-color: inherit;
+          width: 70px;
+          height: 60px;
         }
      
         
-        .wb-tabs {
-          float: left;
-          overflow: hidden;
-          border: 1px solid #999;
-          background-color: #bbb;
-        }
-
-        /* Style the tab */
-        .tabpanels p{
-          overflow: auto;
-          border: 1px solid #999;
-          background-color: inherit;
-          /*padding: 10px;*/
-          float: top;
-        }
-        .tabpanels summary{
-          overflow: hidden;
-          border: 1px solid #999;
-          background-color: inherit;
-          position: sticky; /*pour la garder avec le scrolll*/
-        }
-        .tabpanels details{
-          float: right;
-          overflow: auto;
-          border: 1px solid #999;
-          background-color: #bbb;
-        }
-
-        /* Style the buttons inside the tab */
-        .tabpanels button {
-          background-color: #ccc;
-          float: right;
-          border: 1px solid #aaa;
-          outline: none;
-          cursor: pointer;
-          padding: 14px 16px;
-          transition: 0.3s;
-          font-size: 14px;
+        .co nav ul{
+            padding : 0px;
+            margin : 0px;
+            list-style-type: none;
+            background-color: #F0E68C;
         }
         
-        .tabpanels button:hover {
-          background-color: #9a3;
-          float: right;
-          border: 1px solid #9b4;
-          outline: none;
-          cursor: pointer;
-          padding: 14px 16px;
-          transition: 0.3s;
-          font-size: 14px;
+        .co nav li{
+            padding : 0px;
+            margin : 0px;
+            display : inline-block;
+            width: 440px;
+            height: 40px;
+            border-right: 1px solid #CCCCCC;
+            text-align: center;
+            line-height: 40px;
         }
-
-        /* Change background color of buttons on hover */
-        .tabpanels details:disabled{
-          background-color: #222;
+        
+        .co nav li:hover{
+            background-color: #FFFF6B;
+        }  
+         
+        .co nav li a{
+            display: block;
+            text-decoration: none;
+            color :  #000000;
         }
-
-        /* Create an active/current tablink class */
-        .tabpanels details:hover{
-          background-color: #9da;
-        }
-
-    /*  </style>  */  
+        
+     
