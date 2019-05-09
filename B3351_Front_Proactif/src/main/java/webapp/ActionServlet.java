@@ -23,8 +23,14 @@ import modele.metier.Employe;
 import webapp.action.Action;
 import webapp.action.actionConnecter;
 import webapp.action.actionInscrire;
+import webapp.action.actionRecupererInfoClient;
+import webapp.action.actionRecupererInfoEmploye;
+import webapp.action.actionRecupererIntervention;
 import webapp.serialisation.Serialisation;
 import webapp.serialisation.retourConnecter;
+import webapp.serialisation.retourInfoClient;
+import webapp.serialisation.retourInfoEmploye;
+import webapp.serialisation.retourIntervention;
 
 /**
  *
@@ -74,6 +80,23 @@ public class ActionServlet extends HttpServlet {
                 action = new actionInscrire();
                 serialisation = new retourConnecter();
                 break;
+            case "recupererInfo":
+                if("employe".equals((String)session.getAttribute("type"))){
+                    action = new actionRecupererInfoEmploye();
+                    serialisation = new retourInfoEmploye();
+                }else if("client".equals((String)session.getAttribute("type"))){
+                    action = new actionRecupererInfoClient();
+                    serialisation = new retourInfoClient();
+                }else{
+                    response.sendError(401,"type non trouvé");
+                }
+                break;
+            case "deconnecter":
+                session = null;
+                break;
+            case "recupererIntervention":
+                action = new actionRecupererIntervention();
+                serialisation = new retourIntervention();
                 
         }
         
