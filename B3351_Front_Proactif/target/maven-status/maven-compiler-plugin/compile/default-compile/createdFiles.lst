@@ -1,3 +1,4 @@
+webapp\action\actionInscrire.class
 webapp\serialisation\Serialisation.class
 webapp\serialisation\retourConnecter.class
 webapp\action\Action.class
