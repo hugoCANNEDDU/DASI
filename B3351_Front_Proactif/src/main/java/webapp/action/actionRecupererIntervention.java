@@ -11,10 +11,7 @@ import modele.metier.Employe;
 import modele.metier.Intervention;
 import modele.metier.InterventionAnimal;
 import modele.metier.InterventionLivraison;
-import modele.metier.Personne;
-import static modele.service.Service.Authentification;
 import static modele.service.Service.InterventionEnCours;
-import static modele.service.Service.trouverClientParMail;
 import static modele.service.Service.trouverEmployeParMail;
 
 /**
