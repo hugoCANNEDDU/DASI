@@ -22,12 +22,14 @@ import javax.servlet.http.HttpSession;
 import modele.metier.Employe;
 import webapp.action.Action;
 import webapp.action.actionConnecter;
+import webapp.action.actionDemanderIntervention;
 import webapp.action.actionInscrire;
 import webapp.action.actionRecupererInfoClient;
 import webapp.action.actionRecupererInfoEmploye;
 import webapp.action.actionRecupererIntervention;
 import webapp.serialisation.Serialisation;
 import webapp.serialisation.retourConnecter;
+import webapp.serialisation.retourDemandeIntervention;
 import webapp.serialisation.retourInfoClient;
 import webapp.serialisation.retourInfoEmploye;
 import webapp.serialisation.retourIntervention;
@@ -97,6 +99,11 @@ public class ActionServlet extends HttpServlet {
             case "recupererIntervention":
                 action = new actionRecupererIntervention();
                 serialisation = new retourIntervention();
+                break;
+            case "demandeIntervention":
+                action = new actionDemanderIntervention();
+                serialisation = new retourDemandeIntervention();
+                break;
                 
         }
         

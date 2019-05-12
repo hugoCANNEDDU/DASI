@@ -45,6 +45,24 @@ and open the template in the editor.
             <div class="image1">
             <img src="brique.JPG" align="center" height="500" width="500" />
         </div>
+        <div id="demandeIntervention">    
+            <div id="demandeInterventionAnimal">
+                Nom animal : <input type="text" id="champ-nom-animal" value="fidgy"/><br>
+                Description : <input type="text" id="champ-description-animal" value="j'ai besoin que l'on garde mon chien"/><br>
+                <button id="bouton-intervention-animal">Valider</button>
+            </div>
+            <div id="demandeInterventionIncident">
+                Description : <input type="text" id="champ-description-incident" value="j'ai une fuite"/><br>
+                <button id="bouton-intervention-incident">Valider</button>
+            </div>
+            <div id="demandeInterventionLivraison">
+                Type d'objet : <input type="text" id="champ-type-objet" value="lettre"/><br>
+                Entreprise : <input type="text" id="champ-entreprise" value="insa"/><br>
+                Description : <input type="text" id="champ-description-livraison" value="Il me le faut au plus vite"/><br>
+                <button id="bouton-intervention-livraison">Valider</button>
+            </div>
+            <span id="messageIntervention"></span>
+        </div>
         
         <div>
         <script type="text/javascript" >
@@ -78,8 +96,57 @@ and open the template in the editor.
                 });
             }
             
+            function demandeIntervention(type){
+                var champDescription = $('#champ-description-'+type).val();
+                var champNomAniaml = $('#champ-nom-animal').val();
+                var champTypeObjet = $('#champ-type-objet').val();
+                var champEntreprise = $('#champ-entreprise').val();
+                
+                $.ajax({
+                    url: './ActionServlet',
+                    method: 'POST',
+                    data: {
+                        todo: 'demandeIntervention',
+                        typeIntervention: type,
+                        description: champDescription,
+                        nomAnimal: champNomAniaml,
+                        typeObjet: champTypeObjet,
+                        entreprise: champEntreprise
+                    },
+                    dataType: 'json'
+                }).done(function (data) {
+                    var success = data.success;
+                    if(success==="true"){
+                        $('#messageIntervention').html('Votre demande d\'intervention est validée');
+                    }else{
+                        $('#messageIntervention').html('Une erreur c\'est produite réessayer plus tard');
+                    }
+                });
+            }
+            
+            
             $(document).ready(function () {
-                // ajout d'un "handler" sur le clic du bouton de connexion
+                $('#bouton-intervention-animal').on('click', function () {
+                    // affichage pour debugage dans la console javascript du navigateur
+                    console.log('Click sur le bouton "Valider (Animal)"');
+                    // appel de la fonction connexion
+                    demandeIntervention("animal");
+                });
+                
+                $('#bouton-intervention-incident').on('click', function () {
+                    // affichage pour debugage dans la console javascript du navigateur
+                    console.log('Click sur le bouton "Valider (incident)"');
+                    // appel de la fonction connexion
+                    demandeIntervention("incident");
+                });
+                
+                $('#bouton-intervention-livraison').on('click', function () {
+                    // affichage pour debugage dans la console javascript du navigateur
+                    console.log('Click sur le bouton "Valider (livraison)"');
+                    // appel de la fonction connexion
+                    demandeIntervention("livraison");
+                });
+            
                 infoPers();
             });
         
