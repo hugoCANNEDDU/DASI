@@ -21,6 +21,7 @@ import static modele.service.Service.trouverEmployeParMail;
 import javax.servlet.http.HttpSession;
 import modele.metier.Employe;
 import webapp.action.Action;
+import webapp.action.actionCloturerIntervention;
 import webapp.action.actionConnecter;
 import webapp.action.actionDemanderIntervention;
 import webapp.action.actionInscrire;
@@ -28,6 +29,7 @@ import webapp.action.actionRecupererInfoClient;
 import webapp.action.actionRecupererInfoEmploye;
 import webapp.action.actionRecupererIntervention;
 import webapp.serialisation.Serialisation;
+import webapp.serialisation.retourCloturerIntervention;
 import webapp.serialisation.retourConnecter;
 import webapp.serialisation.retourDemandeIntervention;
 import webapp.serialisation.retourInfoClient;
@@ -103,6 +105,10 @@ public class ActionServlet extends HttpServlet {
             case "demandeIntervention":
                 action = new actionDemanderIntervention();
                 serialisation = new retourDemandeIntervention();
+                break;
+            case "cloturer":
+                action = new actionCloturerIntervention();
+                serialisation = new retourCloturerIntervention();
                 break;
                 
         }

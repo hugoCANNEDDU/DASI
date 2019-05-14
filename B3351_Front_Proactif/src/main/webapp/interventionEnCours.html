@@ -49,21 +49,24 @@ and open the template in the editor.
             <li style="background-color:#F0E68C"><a href="informationsPersonnelles.html">INFORMATIONS PERSONNELLES</a></li>
         </ul>
         <div class="panel">
-                Lieu : <label for="lieu"></label> 
-                Type : <label for="type"></label>
-                Informations : <label for="info"></label><br></br>
-                Description client : <label for="descr"></label><br></br>
-                Statut : <label for="statut"></label>
-                <select id="ListeElement" onchange="VerifListe();"> 
-                    <option value="succès">Succès</option> 
-                    <option value="échec">Echec</option> 
+                Lieu : <span id="adresse"></span><br></br>
+                Type : <span id="type"></span><br></br>
+                Informations : <br></br>
+                Type d'objet : <span id="typeObjet"></span><br></br>
+                Entreprise : <span id="entreprise"></span><br></br>
+                Nom de l'animal <span id="nomAnimal"></span><br></br>
+                Description client : <span id="description"></span><br></br>
+                Statut :
+                <select id="statut" onchange="VerifListe();"> 
+                    <option value="reussite">Succès</option> 
+                    <option value="echec">Echèc</option> 
                 </select> 
-                Heure fin : <label for="heureF"></label>
+                Heure fin : 
                 <input style="width:20px" style="heigth:20px" type="text" id="heure" name="heure" maxlength="2"/><br>
                 <input style="width:20px" style="heigth:20px" type="text" id="min" name="min" maxlength="2"/><br>
-                Commentaires : <label for="commentaire"></label>
+                Commentaires : 
                 <input style="width:120px" style="heigth:220px" type="text" id="commentaire" name="commentaire"/><br>
-                <button id="bouton-connexion" class="bouton">Clôturer</button>
+                <button id="bouton-cloturer" class="bouton">Clôturer</button>
         </div>
     </nav>
     </div>
@@ -94,6 +97,109 @@ and open the template in the editor.
             });
         
         </script>
+        
+        <script>
+            function interventionEnCours() {
+                console.log("fonction ok");/*recupère les params passés par la fenêtre précedente*/
+                /*var champType = $('#champ-type').val();
+                var champDesc = $('#champ-desc').val();
+                var champLieu = $('#champ-adresse').val();
+                var res = new Array(champType,champDesc,champLieu);*/
 
+                $.ajax({
+                    url: './ActionServlet',
+                    method: 'POST',
+                    data: {
+                        todo: 'recupererIntervention'
+                    },
+                    dataType: 'json'
+                }).done(function (data) {
+                    var description = data.description;
+                    console.log(data.description);
+                    $('#description').html(description);
+                    
+                    var type = data.type;
+                    console.log(data.type);
+                    $('#type').html(type);
+                    
+                    var adresse = data.adresse;
+                    console.log(data.adresse);
+                    $('#adresse').html(adresse);
+                    
+                    if(type==="Livraison"){
+                        var typeObjet = data.typeObjet;
+                        console.log(data.typeObjet);
+                        $('#typeObjet').html(typeObjet);
+
+                        var entreprise = data.entreprise;
+                        console.log(data.entreprise);
+                        $('#entreprise').html(entreprise);
+
+
+                        var nomAnimal = "-";
+                        $('#nomAnimal').html(nomAnimal);
+                        
+                    }else if(type==="Animal"){
+                        
+                        var typeObjet = "-";
+                        $('#typeObjet').html(typeObjet);
+
+                        var entreprise = "-";
+                        $('#entreprise').html(entreprise);
+
+
+                        var nomAnimal = data.nomAnimal;
+                        console.log(data.nomAnimal);
+                        $('#nomAnimal').html(nomAnimal);
+                        
+                    }else{
+                        var typeObjet = "-";
+                        $('#typeObjet').html(typeObjet);
+
+                        var entreprise = "-";
+                        $('#entreprise').html(entreprise);
+
+
+                        var nomAnimal = "-";
+                        $('#nomAnimal').html(nomAnimal);
+                    }
+       
+                    ;
+                });
+                ;
+            }
+            
+            $(document).ready(function () {
+                // ajout d'un "handler" sur le clic du bouton de connexion
+                interventionEnCours();
+            });
+        
+        </script>
+         <script>
+            function cloturer() {
+                console.log("fonction ok");/*recupère les params passés par la fenêtre précedente*/
+                $.ajax({
+                    url: './ActionServlet',
+                    method: 'POST',
+                    data: {
+                        todo: 'cloturer',
+                        statut: $('#statut').getValue(),
+                        commentaire: $('#commentaire'),
+                        heureFin: $('#heureFin')
+                        
+                    },
+                    dataType: 'json'
+                }).done(function (data) {
+                    
+                });
+            }
+            
+            $(document).ready(function () {
+                // ajout d'un "handler" sur le clic du bouton de connexion
+                infoPers();
+            });
+        
+        </script>
+        
     </body>
 </html>
