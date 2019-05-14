@@ -18,8 +18,9 @@ function opacite(el,opacity)
 function calendrier(m)
 {
     var date = new Date();
+    date.setMonth(date.getMonth()+m);
     var jour = date.getDate();
-    var moi = date.getMonth()+m;
+    var moi = date.getMonth();
     var annee = date.getYear();
     if(annee<=200)
     {
@@ -55,13 +56,13 @@ function calendrier(m)
         {
             document.write('<tr>');
         }
-        if(jour==i)
+        if(jour==i&&m==0)
         {
-            document.write('<td class="cal_aujourdhui">'+i+'</td>');
+            document.write('<td class="cal_aujourdhui" id="jour">'+i+'</td>');
         }
         else
         {
-            document.write('<td>'+i+'</td>');
+            document.write('<td id="jour-'+annee+'-'+(moi+1)+'-'+i+'">'+i+'</td>');
         }
         sem++;
         if(sem==7)

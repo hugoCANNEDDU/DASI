@@ -22,22 +22,8 @@ public class retourCloturerIntervention extends Serialisation{
     @Override
     public void serialiser(HttpServletRequest request, HttpServletResponse response)throws IOException{
         JsonObject jsonContainer=new JsonObject();
-        
-        String type = (String)request.getAttribute("type");
-        jsonContainer.addProperty("type",type);
-        jsonContainer.addProperty("description",(String)request.getAttribute("description"));
-        jsonContainer.addProperty("adresse",(String)request.getAttribute("adresse"));
-        jsonContainer.addProperty("heureFin",(String)request.getAttribute("heureFin"));
-        jsonContainer.addProperty("statut",(String)request.getAttribute("statut"));
-        jsonContainer.addProperty("commentaire",(String)request.getAttribute("commentaire"));
-        
-        
-        if(type.equals("Livraison")){
-            jsonContainer.addProperty("typeObjet",(String)request.getAttribute("typeObjet"));
-            jsonContainer.addProperty("entreprise",(String)request.getAttribute("entreprise"));
-        }else if(type.equals("Animal")){
-            jsonContainer.addProperty("nomAnimal",(String)request.getAttribute("nomAnimal"));
-        }
+     
+        jsonContainer.addProperty("success", (String) request.getAttribute("success"));
         
         PrintWriter out = this.getWriterWithJsonHeader(response);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();

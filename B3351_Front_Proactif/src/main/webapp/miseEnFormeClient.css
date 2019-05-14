@@ -14,19 +14,22 @@ body {
             float : top;
 }
 
+
 .connect {
-          float: left;
+          float: bottom;
           overflow: auto;
-          border: 1px solid #999;
           background-color: inherit;
         }
         
-.connect div{
-  float: left;
-  overflow: auto;
-  border: 1px solid #999;
-  background-color: inherit;
-}
+       
+        
+        .connect div{
+          float: left;
+          overflow: hidden;
+          background-color: inherit;
+          width: 130px;
+          height: 70px;
+        }
 
 .Commentaire { 
             background-color: #ccc;

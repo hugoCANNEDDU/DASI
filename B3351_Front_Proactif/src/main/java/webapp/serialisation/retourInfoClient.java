@@ -10,6 +10,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
@@ -29,10 +30,6 @@ public class retourInfoClient extends Serialisation{
         jsonContainer.addProperty("nom",(String)request.getAttribute("nom"));
         jsonContainer.addProperty("prenom",(String)request.getAttribute("prenom"));
         jsonContainer.addProperty("civilite",(String)request.getAttribute("civilite"));
-        Date d = (Date) request.getAttribute("dateNaissance");
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
-        String dateString = sdf.format(d);
-        jsonContainer.addProperty("dateNaissance",dateString);
 
         
         PrintWriter out = this.getWriterWithJsonHeader(response);

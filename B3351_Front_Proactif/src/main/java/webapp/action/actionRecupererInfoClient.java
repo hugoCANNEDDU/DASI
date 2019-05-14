@@ -28,7 +28,6 @@ public class actionRecupererInfoClient extends Action{
         request.setAttribute("nom", user.getNom());
         request.setAttribute("prenom", user.getPrenom());
         request.setAttribute("civilite", user.getCivilite());
-        request.setAttribute("dateNaissance", user.getDateNaissance());
                 
         return true;
     }

@@ -11,6 +11,9 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,6 +40,12 @@ public class retourListeIntervention extends Serialisation{
             jsonIntervention.addProperty("statut", intervention.getStatut());
             jsonIntervention.addProperty("commentaire", intervention.getCommentaire());
             jsonIntervention.addProperty("description", intervention.getDescription());
+            
+            Date d = intervention.getDateIntervention();
+            DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String dateString = sdf.format(d);
+            jsonContainer.addProperty("dateNaissance",dateString);
+            jsonIntervention.addProperty("date", dateString);
             
             String type = intervention.getType();
             jsonIntervention.addProperty("type", type);

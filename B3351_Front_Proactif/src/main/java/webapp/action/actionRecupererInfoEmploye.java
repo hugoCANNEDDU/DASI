@@ -21,7 +21,7 @@ public class actionRecupererInfoEmploye extends Action{
         String login = (String) session.getAttribute("login");
         
         Employe user = Service.trouverEmployeParMail(login);
-        
+
         request.setAttribute("adresse", user.getAdresse());
         request.setAttribute("mail", user.getMail());
         request.setAttribute("tel", user.getNumTel());
