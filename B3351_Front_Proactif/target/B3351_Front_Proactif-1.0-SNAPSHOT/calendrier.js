@@ -18,8 +18,9 @@ function opacite(el,opacity)
 function calendrier(m)
 {
     var date = new Date();
+    date.setMonth(date.getMonth()+m);
     var jour = date.getDate();
-    var moi = date.getMonth()+m;
+    var moi = date.getMonth();
     var annee = date.getYear();
     if(annee<=200)
     {
@@ -33,6 +34,7 @@ function calendrier(m)
     }
     total = jours_dans_moi[moi];
     var date_aujourdui = jour+' '+mois[moi]+' '+annee;
+    var mois_aujourdui = mois[moi]+' '+annee;
     dep_j = date;
     dep_j.setDate(1);
     if(dep_j.getDate()==2)
@@ -40,7 +42,7 @@ function calendrier(m)
         dep_j=setDate(0);
     }
     dep_j = dep_j.getDay();
-    document.write('<table class="cal_calendrier" onload="opacite(document.getElementById(\'cal_body\'),20);"><tbody id="cal_body"><tr><th colspan="7">'+date_aujourdui+'</th></tr>');
+    document.write('<table class="cal_calendrier" onload="opacite(document.getElementById(\'cal_body\'),20);"><tbody id="cal_body"><tr><th colspan="7">'+mois_aujourdui+'</th></tr>');
     document.write('<tr class="cal_j_semaines"><th>Dim</th><th>Lun</th><th>Mar</th><th>Mer</th><th>Jeu</th><th>Ven</th><th>Sam</th></tr><tr>');
     sem = 0;
     for(i=1;i<=dep_j;i++)
@@ -54,13 +56,13 @@ function calendrier(m)
         {
             document.write('<tr>');
         }
-        if(jour==i)
+        if(jour==i&&m==0)
         {
-            document.write('<td class="cal_aujourdhui">'+i+'</td>');
+            document.write('<td class="cal_aujourdhui" id="jour">'+i+'</td>');
         }
         else
         {
-            document.write('<td>'+i+'</td>');
+            document.write('<td id="jour-'+annee+'-'+(moi+1)+'-'+i+'">'+i+'</td>');
         }
         sem++;
         if(sem==7)
