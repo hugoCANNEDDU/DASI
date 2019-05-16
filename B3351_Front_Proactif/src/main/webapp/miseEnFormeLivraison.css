@@ -1,0 +1,92 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15 mai 2019, 18:39:34
+    Author     : GRAZIA GIULIA
+*/
+
+.intervention{
+    float: top;
+    overflow: auto;
+    background-color: #14B9D3;
+}
+
+.intro{
+          float: left;
+          overflow: auto;
+          border-radius: 1%;
+          text-align: left;
+          padding: 0.1% 0.1%;
+          height: 12%;
+          width: 13%;
+          
+}
+
+.intro span{
+          float: top;
+          overflow: auto;
+          text-align: left;
+          padding: 1% 1%;
+          height: 50%;
+          width: 50%;
+          font: bold;
+          font-size: xx-large;
+}
+
+
+.intro a{
+          float: top;
+          overflow: auto;
+          text-align: left;
+          padding: 1% 1%;
+          height: 50%;
+          width: 50%;
+          
+}
+
+
+.demandeInterventionLivraison{
+          float: left;
+          overflow: auto;
+          text-align: center;
+          text-justify: auto;
+          padding: 0% 23%;
+          height: 12%;
+          width: 35%;
+          font: bold;
+          font-size: xx-large;
+}
+
+.demandeInterventionLivraison input{
+          float:top;
+          background-color: #FFFACD;
+          font: bold;
+          font-size: x-large;
+          height: 45%;
+          width: 75%;
+}
+
+
+
+.demandeInterventionLivraison titre{
+          
+          font: bolder;
+          font-size: xx-large;
+          
+}
+
+.demandeInterventionLivraison button{ 
+          font: bolder;
+          font-size: xx-large;
+          border-radius: 50%;
+          background-color: #C0F6FF;
+}
+
+.demandeInterventionLivraison button:hover{ 
+
+          background-color: #FFFF6B;
+          cursor: pointer;
+}

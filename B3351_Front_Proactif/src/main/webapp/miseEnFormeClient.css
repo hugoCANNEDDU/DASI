@@ -10,7 +10,7 @@ and open the template in the editor.
        
 body {
             font-family: Arial;
-            background-color: #FFFACD;
+            background-color:#FFFACD;
             float : top;
 }
 
@@ -19,7 +19,7 @@ body {
           float: bottom;
           overflow: auto;
           background-color: inherit;
-        }
+}
         
        
         
@@ -27,56 +27,150 @@ body {
           float: left;
           overflow: hidden;
           background-color: inherit;
-          width: 130px;
-          height: 70px;
+          width: 8%;
+          height: 15%;
+          font-size: large;
+          
+        }
+        
+        
+        
+        .connect div img{
+          width: 60%;
+          height: 60%;
+   
+        }
+        
+        .connect svg{
+          
+          width: 100%;
+          height: 100%;
+   
         }
 
-.Commentaire { 
-            background-color: #ccc;
-            float: left;
-            overflow: auto;
-            border: 1px solid #999;
-            padding: 50px 450px ;
-}
-.panelInfo { 
-            background-color: #ccc;
-            float: left;
-            overflow: auto;
-            border: 1px solid #999;
-            padding: 50px 230px ;
-}
-
-.panelA{ 
-            background-color: #aaa;
-            float: left;
-            overflow: auto;
-            border: 1px solid #999;
-            padding: 60px 60px ;
-}
-.panelB{ 
-            background-color: #aaa;
-            float: left ;
-            overflow: auto;
-            border: 1px solid #999;
-            padding: 60px 60px ;
-}
-
-
-.img { 
-            float: top;
-            border: 1px solid #999;
+.afficheListe { 
             background-color: inherit;
+            float: top;
+            overflow: auto;
+            border: 1px solid #FFFACD ;
+            padding: 0% 2.5% ;
+            width: 95%
+}
+
+
+
+.afficheListe ul { 
+            background-color: inherit;
+            float: left;
+            overflow: auto;
+            border: 3px solid #C71585;
+            text-align: left;
+            position: relative;
+            left: 0%;
+            top: 0%;
+            padding: 0% 0% ;
+            width: 100%
+}
+.afficheListe ul li { 
+            background-color: inherit;
+            float: left;
+            overflow: auto;
+            text-align: center;
+            text-justify: inter-cluster;
+            position: relative;
+            left: 0%;
+            top: 0%;
+            border: 1px solid #C71585;
+           /* border-color: #C71585;*/
+            border-radius: 50%;
+            
+            padding: 2% 5% ;
+            
+}
+
+
+.panelInfo { 
+            background-color: #FFFFFF;
+            float: left;
+            overflow: auto;
+            border:  5px solid #222;
+            padding: 2.1% 2% ;
+            position: static;
+            font-size: xx-large;
+            text-align: center;
+            text-justify: auto;
+            height: 40%;
+            width: 40%;
+}
+.panelInfo div{ 
+            background-color: #FFFFFF;
+            float: left;
+            overflow: auto;
+            padding: 1% 13% ;
+            text-align: center;
+            position: relative;
+            
+}
+.panelInfo div span{ 
+
+            float: top;
+            overflow: auto;
+            text-align: left;
+            position: relative;  
+            text-align: center;
+}
+
+
+
+.panelInfo2{ 
+            background-color: #FFFFFF;
+            float: left;
+            overflow: auto;
+            border : 5.5px solid #222;
+            padding: 2.5% 2% ;
+            height: 32%;
+            width: 44%;
+            position: static;
+            font-size: xx-large;
+            text-align: center;
+            text-justify: auto;
+}
+
+.panelInfo2 div{ 
+            background-color: #FFFFFF;
+            float: left;
+            overflow: auto;
+            padding: 2% 2% ;
+            text-align: left;
+            position: relative;
+            
+}
+.panelInfo2 div span{ 
+
+            float: left;
+            overflow: auto;
+            text-align: left;
+            position: relative;           
+}
+
+
+
+.image3{ 
+            float: left;
+            background-color: inherit;
+            position: static;  
+            padding: 0% 36% ;
+            
 }
 
 .image2 { 
             float: left;
-            border: 1px solid #999;
             background-color: inherit;
+            padding: 1% 1% ;
 }
 
 
 .image1 { 
             float: top;
-            border: 1px solid #999;
             background-color: inherit;
 }

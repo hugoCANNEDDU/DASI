@@ -1,0 +1,98 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15 mai 2019, 00:14:26
+    Author     : GRAZIA GIULIA
+*/
+
+
+.intervention{
+    float: top;
+    overflow: auto;
+    background-color: orange;
+}
+
+.intro{
+          float: left;
+          overflow: auto;
+          background-color: orange;
+          border-radius: 1%;
+          text-align: left;
+          padding: 0.1% 0.1%;
+          height: 12%;
+          width: 13%;
+          
+}
+
+.intro span{
+          float: top;
+          overflow: auto;
+          background-color: orange;
+          text-align: left;
+          padding: 1% 1%;
+          height: 50%;
+          width: 50%;
+          font: bold;
+          font-size: xx-large;
+}
+
+
+.intro a{
+          float: top;
+          overflow: auto;
+          background-color: orange;
+          text-align: left;
+          padding: 1% 1%;
+          height: 50%;
+          width: 50%;
+          
+}
+
+
+
+.demandeInterventionAnimal{
+          float: left;
+          overflow: auto;
+          background-color: orange;
+          text-align: center;
+          text-justify: auto;
+          padding: 0% 23%;
+          height: 12%;
+          width: 35%;
+          font: bold;
+          font-size: xx-large;
+}
+
+.demandeInterventionAnimal input{
+          float:top;
+          background-color: #FFFACD;
+          font: bold;
+          font-size: x-large;
+          height: 45%;
+          width: 75%;
+}
+
+
+
+.demandeInterventionAnimal titre{
+          
+          font: bolder;
+          font-size: xx-large;
+          
+}
+
+.demandeInterventionAnimal button{ 
+          font: bolder;
+          font-size: xx-large;
+          border-radius: 50%;
+          background-color: orangered;
+}
+
+.demandeInterventionAnimal button:hover{ 
+
+          background-color: #FFFF6B;
+          cursor: pointer;
+}

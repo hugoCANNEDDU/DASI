@@ -58,11 +58,11 @@ function calendrier(m)
         }
         if(jour==i&&m==0)
         {
-            document.write('<td class="cal_aujourdhui" id="jour">'+i+'</td>');
+            document.write('<td class="cal_aujourdhui" id="'+annee+'-0'+(moi+1)+'-'+i+'">'+i+'</td>');
         }
         else
         {
-            document.write('<td id="jour-'+annee+'-'+(moi+1)+'-'+i+'">'+i+'</td>');
+            document.write('<td id="'+annee+'-0'+(moi+1)+'-'+i+'">'+i+'</td>');
         }
         sem++;
         if(sem==7)

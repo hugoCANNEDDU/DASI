@@ -12,6 +12,7 @@ and open the template in the editor.
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <link rel="stylesheet"  href="calendrier.css" />
         <link rel="stylesheet"  href="miseEnFormeClient.css" />
+         <link rel="stylesheet"  href="miseEnFormeAnimal.css" />
     <script type="text/javascript" src="calendrier.js"></script>
     </head>
     <body>
@@ -43,17 +44,26 @@ and open the template in the editor.
         <a href="index.html">Déconnexion</a>
  
         </div>
-            <br>
-            <div class="image1">
-            <img src="IMG/img_intervention.PNG" alt="" usemap="#image-map"/>
-            <map name="image-map">
-                <area  alt="incident" title="incident" href="interventionIncident.html" coords="112,112,54" shape="circle">
-                <area  alt="livraison" title="livraison" href="interventionLivraison.html" coords="360,108,55" shape="circle">
-                <area  alt="animal" title="animal" href="interventionAnimal.html" coords="238,332,53" shape="circle">
-            </map>
-        </div>
         
-        
+        <span>Cliquez sur l'image pour revenir au choix d'intervention</span>
+            <div class="intervention">
+                <div class="intro">
+                    
+                    <a href="homeClient.html"><img id="chat" src="IMG/animal.JPG" ></a><br>
+                    
+                </div>
+                <div class="demandeInterventionAnimal">
+                    <div class="titre"> Intervention auprès d'un animal</div> <br><br>
+                    <span> Quelle est l'espèce de votre petit compagnon? <span> <br>
+                    <input type="text" id="champ-nom-animal" value="fidgy"/><br>
+                    <span> Merci de décrire l'intervention souhaitée : <span><br>
+                    <input type="text" id="champ-description-animal" value="j'ai besoin que l'on garde mon chien"/><br>
+                    <button id="bouton-intervention-animal">Valider</button><br>
+                    <span id="messageIntervention"></span><br>
+                    <span>Vous receverez une confirmation par mail<span> <br>
+                </div>
+            </div>
+      
         <div id="calendrier">
         <script type="text/javascript" >
         calendrier(-3);
@@ -119,13 +129,13 @@ and open the template in the editor.
                     
                 }).done(function (data) {
                     $.each(data.intervention,function(i,intervention){
-                        var color="white";
+                        var color='white';
                         if(intervention.type==="Animal"){
                             color="orange";
-                        }else if(intervention.type==="Livraison"){
-                            color="blue";
-                        }else{
+                        }else if(intervention.type==="Incident"){
                             color="green";
+                        }else{
+                            color="blue";
                         }
                         $('#'+intervention.date).css('background-color', color);
                     });
@@ -146,15 +156,15 @@ and open the template in the editor.
                     $("#liste").empty();
                     $.each(data.intervention,function(i,intervention){
                         var liElement = '<li>  statut : '+intervention.statut+
-                                        ' <br>commentaire :' +intervention.commentaire+
-                                        ' <br>description : '+intervention.description+
-                                        ' <br>type : '+intervention.type+
-                                        ' <br>date : '+intervention.date;
+                                        '<br/> commentaire :' +intervention.commentaire+
+                                        '<br/> description : '+intervention.description+
+                                        '<br/> type : '+intervention.type+
+                                        '<br/> date : '+intervention.date;
                         if(intervention.type==="Livraison"){
-                                        liElement = liElement+' <br>typeObjet : '+intervention.typeObjet+
-                                        ' <br>entreprise : '+intervention.entreprise;
+                                        liElement = liElement+'<br/> typeObjet : '+intervention.typeObjet+
+                                        '<br/> entreprise : '+intervention.entreprise;
                         }else if(intervention.type==="Animal"){
-                                        liElement = liElement+' <br>Nom Animal : '+intervention.nomAnimal;
+                                        liElement = liElement+'<br/> Nom Animal : '+intervention.nomAnimal;
                         }
                 
                         liElement = liElement+'</li>';
@@ -231,3 +241,5 @@ and open the template in the editor.
         </script>
     </body>
 </html>
+
+

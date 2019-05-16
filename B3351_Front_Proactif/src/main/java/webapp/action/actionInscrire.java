@@ -30,7 +30,7 @@ public class actionInscrire extends Action{
         String adresse = (String)request.getParameter("adresse");
         String tel = (String)request.getParameter("tel");
         
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date date=null;
         try{
             date = sdf.parse(dateString);

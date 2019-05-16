@@ -1,0 +1,94 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15 mai 2019, 19:06:10
+    Author     : GRAZIA GIULIA
+*/
+
+.intervention{
+    float: top;
+    overflow: auto;
+    background-color: greenyellow;
+}
+
+.intro{
+          float: left;
+          overflow: auto;
+          border-radius: 1%;
+          text-align: left;
+          padding: 0.1% 0.1%;
+          height: 12%;
+          width: 13%;
+         
+          
+}
+
+.intro span{
+          float: top;
+          overflow: auto;
+          text-align: left;
+          padding: 1% 1%;
+          height: 50%;
+          width: 50%;
+          font: bold;
+          font-size: xx-large;
+}
+
+
+.intro a{
+          float: top;
+          overflow: auto;
+          text-align: left;
+          padding: 1% 1%;
+          height: 50%;
+          width: 50%;
+          
+}
+
+
+.demandeInterventionIncident{
+          float: left;
+          overflow: auto;
+          text-align: center;
+          text-justify: auto;
+          padding: 0% 23%;
+          height: 12%;
+          width: 35%;
+          font: bold;
+          font-size: xx-large;
+          
+}
+
+.demandeInterventionIncident input{
+          float:top;
+          background-color: #FFFACD;
+          font-size: x-large;
+          height: 45%;
+          width: 75%;
+}
+
+
+
+.demandeInterventionIncident titre{
+
+          font-size: xx-large;
+          
+}
+
+.demandeInterventionIncident button{ 
+          
+          font: bolder;
+          font-size: xx-large;
+          border-radius: 50%;
+          background-color: orangered;
+          background-color: darkgreen;
+}
+
+.demandeInterventionIncident button:hover{ 
+
+          background-color: #FFFF6B;
+          cursor: pointer;
+}

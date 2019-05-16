@@ -20,28 +20,13 @@ import modele.service.Service;
  *
  * @author hcann
  */
-public class actionRecupererInterventionClient extends Action{
+public class actionListeInterventionsSimple extends Action{
     @Override
     public boolean executer(HttpServletRequest request, HttpSession session){
-        String typeIntervention = (String) request.getParameter("typeIntervention");
-        String dateString = (String) request.getParameter("date");
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date date=null;
-        try{
-            date = sdf.parse(dateString);
-        }catch(Exception e){
-        }
-           
-        
         Client user = Service.trouverClientParMail((String) session.getAttribute("login"));
         List<Intervention> result = Service.listerInterventionsClient(user);
-        List<Intervention> resultSelect=new ArrayList<Intervention>();
-        for(Intervention i:result){
-            if(i.getDateIntervention().equals(date )){
-                resultSelect.add(i);
-            }
-        }
-        request.setAttribute("result", resultSelect);
+
+        request.setAttribute("result", result);
         
         return true;
     }

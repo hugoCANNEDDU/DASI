@@ -25,6 +25,7 @@ import webapp.action.actionCloturerIntervention;
 import webapp.action.actionConnecter;
 import webapp.action.actionDemanderIntervention;
 import webapp.action.actionInscrire;
+import webapp.action.actionListeInterventionsSimple;
 import webapp.action.actionRecupererInfoClient;
 import webapp.action.actionRecupererInfoEmploye;
 import webapp.action.actionRecupererIntervention;
@@ -37,6 +38,7 @@ import webapp.serialisation.retourInfoClient;
 import webapp.serialisation.retourInfoEmploye;
 import webapp.serialisation.retourIntervention;
 import webapp.serialisation.retourListeIntervention;
+import webapp.serialisation.retourListeInterventionsSimple;
 
 /**
  *
@@ -116,6 +118,10 @@ public class ActionServlet extends HttpServlet {
                 action = new actionRecupererInterventionClient();
                 serialisation = new retourListeIntervention();
                 break;   
+            case "recupererListeInterventionsSimple":
+                action = new actionListeInterventionsSimple();
+                serialisation = new retourListeInterventionsSimple();
+                break;  
         }
         
         if(action==null){
