@@ -25,6 +25,7 @@ import webapp.action.actionCloturerIntervention;
 import webapp.action.actionConnecter;
 import webapp.action.actionDemanderIntervention;
 import webapp.action.actionInscrire;
+import webapp.action.actionInterventionJour;
 import webapp.action.actionListeInterventionsSimple;
 import webapp.action.actionRecupererInfoClient;
 import webapp.action.actionRecupererInfoEmploye;
@@ -121,7 +122,11 @@ public class ActionServlet extends HttpServlet {
             case "recupererListeInterventionsSimple":
                 action = new actionListeInterventionsSimple();
                 serialisation = new retourListeInterventionsSimple();
-                break;  
+                break;
+            case "recupererListeInterventionJour":
+                action = new actionInterventionJour();
+                serialisation = new retourListeIntervention();
+                break; 
         }
         
         if(action==null){
@@ -130,32 +135,6 @@ public class ActionServlet extends HttpServlet {
             action.executer(request, session);
             serialisation.serialiser(request, response);
         }
-        
-        
-        
-        
-        
-        /*response.setContentType("application/json;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            HttpSession session = request.getSession(true);
-            request.setCharacterEncoding("UTF-8");
-            String action=request.getParameter("action");
-
-            if("connecter".equals(action)){
-                String login = request.getParameter("login");
-                String password = (String)request.getParameter("password");
-                if(Authentification(login,password)){
-                    session.setAttribute("utilisateur", login);
-                    out.println("{\"connexion\":true}");
-                }else{
-                    out.println("{\"connexion\":false}");
-                }
-            }else if("recupererLogin".equals(action)){
-                Employe e=trouverEmployeParMail((String) session.getAttribute("utilisateur"));
-                String email=e.getMail();
-                out.println("{\"mail\":\""+email+"\"}");
-            }
-        }*/
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

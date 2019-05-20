@@ -1,10 +1,12 @@
 webapp\action\actionInscrire.class
+webapp\serialisation\retourListeInterventionsSimple.class
 webapp\action\actionRecupererIntervention.class
 webapp\serialisation\retourListeIntervention.class
 webapp\serialisation\retourConnecter.class
 webapp\action\Action.class
 webapp\serialisation\retourCloturerIntervention.class
 webapp\action\actionDemanderIntervention.class
+webapp\action\actionListeInterventionsSimple.class
 webapp\serialisation\retourIntervention.class
 webapp\serialisation\retourInfoClient.class
 webapp\action\actionRecupererInterventionClient.class

@@ -12,7 +12,7 @@ and open the template in the editor.
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <link rel="stylesheet"  href="calendrier.css" />
         <link rel="stylesheet"  href="miseEnFormeClient.css" />
-    <script type="text/javascript" src="calendrier.js"></script>
+        <script type="text/javascript" src="calendrier.js"></script>
     </head>
     <body>
         <div class="connect"> 
@@ -47,29 +47,12 @@ and open the template in the editor.
             <div class="image1">
             <img src="IMG/img_intervention.PNG" alt="" usemap="#image-map"/>
             <map name="image-map">
-                <area  alt="incident" title="incident" href="" coords="112,112,54" shape="circle">
-                <area  alt="livraison" title="livraison" href="" coords="360,108,55" shape="circle">
-                <area  alt="animal" title="animal" href="" coords="238,332,53" shape="circle">
+                <area  alt="incident" title="incident" href="interventionIncident.html" coords="112,112,54" shape="circle">
+                <area  alt="livraison" title="livraison" href="interventionLivraison.html" coords="360,108,55" shape="circle">
+                <area  alt="animal" title="animal" href="interventionAnimal.html" coords="238,332,53" shape="circle">
             </map>
         </div>
-        <div id="demandeIntervention">    
-            <div id="demandeInterventionAnimal">
-                Nom animal : <input type="text" id="champ-nom-animal" value="fidgy"/><br>
-                Description : <input type="text" id="champ-description-animal" value="j'ai besoin que l'on garde mon chien"/><br>
-                <button id="bouton-intervention-animal">Valider</button>
-            </div>
-            <div id="demandeInterventionIncident">
-                Description : <input type="text" id="champ-description-incident" value="j'ai une fuite"/><br>
-                <button id="bouton-intervention-incident">Valider</button>
-            </div>
-            <div id="demandeInterventionLivraison">
-                Type d'objet : <input type="text" id="champ-type-objet" value="lettre"/><br>
-                Entreprise : <input type="text" id="champ-entreprise" value="insa"/><br>
-                Description : <input type="text" id="champ-description-livraison" value="Il me le faut au plus vite"/><br>
-                <button id="bouton-intervention-livraison">Valider</button>
-            </div>
-            <span id="messageIntervention"></span>
-        </div>
+        
         
         <div id="calendrier">
         <script type="text/javascript" >
@@ -79,23 +62,24 @@ and open the template in the editor.
         calendrier(0);
         </script>
         </div>
-        <br/><br>
-        <div class="Commentaire">
-            <ul id="liste">
-                
-            </ul>
-            
+           
+        <div class="afficheListe">
+            <ul id="liste"></ul>    
         </div>
-        <br/><br>
         <div class="panelInfo">
-            <div class="panelA"><span> Civilité  </span><span id="civ"></span><br>
-            <span>Nom</span>   <span id="nom"></span><br>
-            <span>Prénom</span>  <span id="prenom"></span><br>
-            </div>
-            <div class="image2"><img src="http://www.betterbet.it/img/user.png" align="center" height="90" width="90" /></div>
-            <div class="panelB"><span> Domicile</span>  <span id="dom"></span><br>
-            <span>Téléphone</span> <span id="tel"></span>
-            </div>
+            <div><span> Civilité : </span><span id="civ"></span></div>
+            <div><span>Nom : </span><span id="nom2"></span></div>
+            <div><span>Prénom : </span><span id="prenom2"></span></div>
+        </div>
+        <div class="image2">
+            <img src="http://www.betterbet.it/img/user.png" align="center" height="90" width="90" />
+        </div>
+        <div class="panelInfo2">
+            <div><span> Domicile : </span><span id="dom"></span></div>
+            <div><span>Téléphone : </span> <span id="tel"></span></div>
+        </div>
+            
+        <div class="image3">
             <img src="IMG/contact.JPG" alt="" height="200" width="500" />
         </div>
         
@@ -115,31 +99,62 @@ and open the template in the editor.
                     // si connexion ok, aller sur la page suivante :
                     $('#nom').html(nom);
                     $('#prenom').html(prenom);
+                    $('#nom2').html(nom);
+                    $('#prenom2').html(prenom);
+                    $('#dom').html(data.adresse);
+                    $('#tel').html(data.tel);
+                    $('#civ').html(data.civilite);
                 });
             }
-            
-            function listeInterventions() {
+            function listeInterventionsSimple() {
+                
                 console.log("fonction ok");/*recupère les params passés par la fenêtre précedente*/
                 $.ajax({
                     url: './ActionServlet',
                     method: 'POST',
                     data: {
-                        todo: 'recupererListeIntervention'
+                        todo: 'recupererListeInterventionsSimple'
+                    },
+                    dataType: 'json'
+                    
+                }).done(function (data) {
+                    $.each(data.intervention,function(i,intervention){
+                        var color="white";
+                        if(intervention.type==="Animal"){
+                            color="orange";
+                        }else if(intervention.type==="Livraison"){
+                            color="blue";
+                        }else{
+                            color="green";
+                        }
+                        $('#'+intervention.date).css('background-color', color);
+                    });
+                });
+            }
+             
+            function listeInterventions(id) {
+                console.log("fonction ok");
+                $.ajax({
+                    url: './ActionServlet',
+                    method: 'POST',
+                    data: {
+                        todo: 'recupererListeIntervention',
+                        date: id
                     },
                     dataType: 'json'
                 }).done(function (data) {
                     $("#liste").empty();
                     $.each(data.intervention,function(i,intervention){
                         var liElement = '<li>  statut : '+intervention.statut+
-                                        ' commentaire :' +intervention.commentaire+
-                                        ' description : '+intervention.description+
-                                        ' type : '+intervention.type+
-                                        ' date : '+intervention.date;
-                        if(intervention==="livraison"){
-                                        liElement = liElement+' typeObjet : '+intervention.typeObjet+
-                                        ' entreprise : '+intervention.entreprise;
-                        }else if(intervention==="animal"){
-                                        liElement = liElement+' Nom Animal : '+intervention.nomAnimal;
+                                        ' <br>commentaire :' +intervention.commentaire+
+                                        ' <br>description : '+intervention.description+
+                                        ' <br>type : '+intervention.type+
+                                        ' <br>date : '+intervention.date;
+                        if(intervention.type==="Livraison"){
+                                        liElement = liElement+' <br>typeObjet : '+intervention.typeObjet+
+                                        ' <br>entreprise : '+intervention.entreprise;
+                        }else if(intervention.type==="Animal"){
+                                        liElement = liElement+' <br>Nom Animal : '+intervention.nomAnimal;
                         }
                 
                         liElement = liElement+'</li>';
@@ -205,11 +220,12 @@ and open the template in the editor.
                     var id=$(this).attr("id");
                     console.log('Click sur '+id);
                     // appel de la fonction connexion
+                    listeInterventions(id);
                     
                 });
             
                 infoPers();
-                listeInterventions();
+                listeInterventionsSimple();
             });
         
         </script>

@@ -12,7 +12,7 @@ and open the template in the editor.
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <link rel="stylesheet"  href="calendrier.css" />
         <link rel="stylesheet"  href="miseEnFormeClient.css" />
-    <script type="text/javascript" src="calendrier.js"></script>
+        <script type="text/javascript" src="calendrier.js"></script>
     </head>
     <body>
         <div class="connect"> 
@@ -133,13 +133,13 @@ and open the template in the editor.
             }
              
             function listeInterventions(id) {
-                console.log("fonction ok");/*recupère les params passés par la fenêtre précedente*/
+                console.log("fonction ok");
                 $.ajax({
                     url: './ActionServlet',
                     method: 'POST',
                     data: {
                         todo: 'recupererListeIntervention',
-                        date:id
+                        date: id
                     },
                     dataType: 'json'
                 }).done(function (data) {

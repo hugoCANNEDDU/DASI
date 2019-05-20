@@ -7,9 +7,11 @@ C:\Users\hcann\Documents\GitHub\DASI\B3351_Front_Proactif\src\main\java\webapp\a
 C:\Users\hcann\Documents\GitHub\DASI\B3351_Front_Proactif\src\main\java\webapp\action\actionRecupererInterventionClient.java
 C:\Users\hcann\Documents\GitHub\DASI\B3351_Front_Proactif\src\main\java\webapp\serialisation\retourCloturerIntervention.java
 C:\Users\hcann\Documents\GitHub\DASI\B3351_Front_Proactif\src\main\java\webapp\serialisation\retourDemandeIntervention.java
+C:\Users\hcann\Documents\GitHub\DASI\B3351_Front_Proactif\src\main\java\webapp\action\actionListeInterventionsSimple.java
 C:\Users\hcann\Documents\GitHub\DASI\B3351_Front_Proactif\src\main\java\webapp\serialisation\retourInfoEmploye.java
 C:\Users\hcann\Documents\GitHub\DASI\B3351_Front_Proactif\src\main\java\webapp\serialisation\retourListeIntervention.java
 C:\Users\hcann\Documents\GitHub\DASI\B3351_Front_Proactif\src\main\java\webapp\serialisation\retourInfoClient.java
+C:\Users\hcann\Documents\GitHub\DASI\B3351_Front_Proactif\src\main\java\webapp\serialisation\retourListeInterventionsSimple.java
 C:\Users\hcann\Documents\GitHub\DASI\B3351_Front_Proactif\src\main\java\webapp\action\Action.java
 C:\Users\hcann\Documents\GitHub\DASI\B3351_Front_Proactif\src\main\java\webapp\action\actionDemanderIntervention.java
 C:\Users\hcann\Documents\GitHub\DASI\B3351_Front_Proactif\src\main\java\webapp\serialisation\retourConnecter.java
