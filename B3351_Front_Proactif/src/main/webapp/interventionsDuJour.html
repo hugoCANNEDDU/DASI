@@ -14,8 +14,8 @@ and open the template in the editor.
         <style type="text/css">
             html, body { height: 100%; margin: 0; padding: 0; }
             h1 { text-align: center; }
-            #map { height: 80%;
-                   margin: 10px 10px}
+            #map { height: 90%;
+                   margin: 1% 1%}
         </style>
     </head>
      <body>
@@ -87,114 +87,64 @@ and open the template in the editor.
 
             var infowindow = makeInfoWindow('');
 
-            var marker = new google.maps.Marker({
-                map: googleMapInstance,
-                position: {lat: 45.782122, lng: 4.872735},
-                title: "Département IF, INSA de Lyon",
-                icon: {url: './image/bird.png', scaledSize: new google.maps.Size(32, 32)}
-            });
-
-            marker.addListener('click', function () {
-
-                infowindow.setContent('<div>Information: ' + marker.title + '</div>');
-                infowindow.open(googleMapInstance, marker);
-            });
-
-            var marker2 = new google.maps.Marker({
-                map: googleMapInstance,
-                position: {lat: 45.782592, lng: 4.878238},
-                title: "Entrée principale, INSA de Lyon",
-                icon: {url: './image/snake.png', scaledSize: new google.maps.Size(32, 32)}
-            });
-
-            marker2.addListener('click', function () {
-
-                infowindow.setContent('<div>Information: ' + marker2.title + '</div>');
-                infowindow.open(googleMapInstance, marker2);
-            });
-
             // Simuler un appel AJAX (attente 5s)
             setTimeout(
-                    generateMarkers,
+                    interventionJour,
                     5000
                     );
         }
 
-        function generateMarkers() {
-
-            // Petite popup Google Maps
-            var infowindow = makeInfoWindow('');
-
-            var position = {lat: 45.782122, lng: 4.872735};
-
-            for (var i = 0; i < 100; i++) {
-
-                var iconImage = null; // marker par défaut
-                if (i % 2 === 0) {
-                    // image pour marker personnalisé
-                    iconImage = {url: './image/UnderConstruction.png', scaledSize: new google.maps.Size(32, 32)}
-                }
-
-                var marker = new google.maps.Marker({
-                    map: googleMapInstance,
-                    position: {lat: position.lat + (Math.random() - 0.5) / 10.0, lng: position.lng + 2 * (Math.random() - 0.5) / 10.0},
-                    title: 'Endroit #' + i,
-                    icon: iconImage
-                });
-
-                attachInfoWindow(
-                        marker, infowindow,
-                        '<div><strong><a href="./endroit.html?' + i + '">Endroit #' + i + '</a></strong><br/>Ceci est l\'endroit charmant numéro ' + i + '<br/>' + 'Incroyable !' + '</div>'
-                        );
-            }
-
-        }
-
-        </script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAklw96N9rLd93ubr-F04CN7qi2ryKayAc&callback=initMap">
-        </script>
-
-    
-        
-        <script>
-            function infoPers() {
-                console.log("fonction ok");/*recupère les params passés par la fenêtre précedente*/
-                $.ajax({
-                    url: './ActionServlet',
-                    method: 'POST',
-                    data: {
-                        todo: 'recupererInfo'
-                    },
-                    dataType: 'json'
-                }).done(function (data) {
-                    var mail = data.mail;
-                    console.log(data.mail);
-                    // si connexion ok, aller sur la page suivante :
-                    $('#mail').html(mail);
-                });
-            }
-            
-            function interventionJour(){
-                $.ajax({
-                    url: './ActionServlet',
-                    method: 'POST',
-                    data: {
-                        todo: 'recupererListeInterventionJour'
-                    },
-                    dataType: 'json'
-                }).done(function (data) {
-                    
-                });
-            }
-            
-            $(document).ready(function () {
-                // ajout d'un "handler" sur le clic du bouton de connexion
-                infoPers();
-                interventionJour();
+        function infoPers() {
+            console.log("fonction ok");/*recupère les params passés par la fenêtre précedente*/
+            $.ajax({
+                url: './ActionServlet',
+                method: 'POST',
+                data: {
+                    todo: 'recupererInfo'
+                },
+                dataType: 'json'
+            }).done(function (data) {
+                var mail = data.mail;
+                console.log(data.mail);
+                // si connexion ok, aller sur la page suivante :
+                $('#mail').html(mail);
             });
+        }
             
+        function interventionJour(){
+            $.ajax({
+                url: './ActionServlet',
+                method: 'POST',
+                data: {
+                    todo: 'recupererListeInterventionJour'
+                },
+                dataType: 'json'
+            }).done(function (data) {
+                var infowindow = makeInfoWindow('');
+                var position = {lat: 45.782122, lng: 4.872735};
+
+                $.each(data.intervention,function(i,intervention){
+                    console.log('coucou');
+                    var iconImage = null;
+                    var marker= new google.maps.Marker({
+                        map : googleMapInstance,
+                        position: {lat: intervention.lat, lng: intervention.lng},
+                        title: 'Endroit #' + i,
+                        icon: iconImage
+                    });
+
+                    attachInfoWindow(marker, infowindow,'Type :'+intervention.type);
+                });
+            });
+        }
             
+        $(document).ready(function () {
+            // ajout d'un "handler" sur le clic du bouton de connexion
+            infoPers();
+        });
+        </script>
         
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAklw96N9rLd93ubr-F04CN7qi2ryKayAc&callback=initMap">
         </script>
 
     </body>

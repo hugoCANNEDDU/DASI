@@ -40,6 +40,8 @@ public class retourListeIntervention extends Serialisation{
             jsonIntervention.addProperty("statut", intervention.getStatut());
             jsonIntervention.addProperty("commentaire", intervention.getCommentaire());
             jsonIntervention.addProperty("description", intervention.getDescription());
+            jsonIntervention.addProperty("lat", intervention.getClient().getLat());
+            jsonIntervention.addProperty("lng", intervention.getClient().getLng());
             
             Date d = intervention.getDateIntervention();
             DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");

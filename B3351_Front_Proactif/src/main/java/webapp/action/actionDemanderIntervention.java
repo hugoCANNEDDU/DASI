@@ -5,6 +5,7 @@
  */
 package webapp.action;
 
+import static java.rmi.server.LogStream.log;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import modele.metier.Client;
@@ -26,6 +27,7 @@ public class actionDemanderIntervention extends Action{
         if(typeIntervention.equals("animal")){
             String nomAnimal = request.getParameter("nomAnimal");
             i=Service.creerInterventionAnimal(user, nomAnimal, description);
+            log("animal");
         }else if(typeIntervention.equals("incident")){
             i=Service.creerInterventionIncident(user, description);
         }else if(typeIntervention.equals("livraison")){
