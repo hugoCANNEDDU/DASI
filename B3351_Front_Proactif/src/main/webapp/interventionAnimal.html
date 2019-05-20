@@ -197,6 +197,7 @@ and open the template in the editor.
                     var success = data.success;
                     if(success==="true"){
                         $('#messageIntervention').html('Votre demande d\'intervention est validée');
+                        void window.location.reload();
                     }else{
                         $('#messageIntervention').html('Une erreur c\'est produite réessayer plus tard');
                     }
