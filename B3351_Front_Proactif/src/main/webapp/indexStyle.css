@@ -20,3 +20,19 @@ body {
           border: 1px solid #999;
           background-color: inherit;
         }
+      
+  .div panel #oubli{
+
+          
+          border: 1px solid #999;
+          background-color: activeborder;
+          color: blueviolet;
+           
+        }       
+        
+ .div panel #oubli:hover {
+
+          background-color: inherit;
+          color: blueviolet;
+           
+        }       

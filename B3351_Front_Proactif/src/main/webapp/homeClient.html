@@ -145,13 +145,13 @@ and open the template in the editor.
                 }).done(function (data) {
                     $("#liste").empty();
                     $.each(data.intervention,function(i,intervention){
-                        var liElement = '<li>  statut : '+intervention.statut+
-                                        ' <br>commentaire :' +intervention.commentaire+
-                                        ' <br>description : '+intervention.description+
-                                        ' <br>type : '+intervention.type+
-                                        ' <br>date : '+intervention.date;
+                        var liElement = '<li>  Statut : '+intervention.statut+
+                                        ' <br>Commentaire :' +intervention.commentaire+
+                                        ' <br>Description : '+intervention.description+
+                                        ' <br>Type : '+intervention.type+
+                                        ' <br>Date : '+intervention.date;
                         if(intervention.type==="Livraison"){
-                                        liElement = liElement+' <br>typeObjet : '+intervention.typeObjet+
+                                        liElement = liElement+' <br>Objet : '+intervention.typeObjet+
                                         ' <br>entreprise : '+intervention.entreprise;
                         }else if(intervention.type==="Animal"){
                                         liElement = liElement+' <br>Nom Animal : '+intervention.nomAnimal;
@@ -213,7 +213,7 @@ and open the template in the editor.
                     // affichage pour debugage dans la console javascript du navigateur
                     console.log('Click sur le bouton "Valider (livraison)"');
                     // appel de la fonction connexion
-                    demandeIntervention("livraison");
+                    demandeIntervention("livraison"); 
                 });
                 
                 $('#calendrier').on('click','td', function () {
@@ -223,7 +223,7 @@ and open the template in the editor.
                     listeInterventions(id);
                     
                 });
-            
+                
                 infoPers();
                 listeInterventionsSimple();
             });

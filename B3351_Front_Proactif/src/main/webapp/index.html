@@ -35,7 +35,8 @@
                 Mot de passe : <br><input type="password" id="champ-password" name="password" />
                 <button id="bouton-connexion" class="bouton">&#x2713;</button>                
                 <div id="message" class="errorText">.</div>
-                <a href="index.html">Mot de passe oublié?</a>
+                <a id="oubli" style="color:blue; cursor: pointer; font-size: xx-large ">Mot de passe oublié?</a>
+                <div id="messageMdp" class="errorText">.</div>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118 95" preserveAspectRatio="xMidYMid meet" width="118pt" height="95pt" version="1.0">
                 <g fill="#000000" stroke="none" transform="translate(0 95) scale(0.1 -0.1)">
@@ -200,6 +201,29 @@
                     }
                 });
             }
+            
+            function mdpOublie() {
+                var champLogin = $('#champ-login').val();
+
+                $.ajax({
+                    url: './ActionServlet',
+                    method: 'POST',
+                    data: {
+                        todo: 'mdpOublie',
+                        login: champLogin
+                    },
+                    dataType: 'json'
+                }).done(function (data) {
+                    var success = data.success;
+                    console.log(data.success);
+                    // si connexion ok, aller sur la page suivante :
+                    if(success==="true"){
+                        $('#messageMdp').html('Mail envoyé');
+                    }else{
+                        $('#messageMdp').html('Mail erronée');
+                    }
+                });
+            }
 
             $(document).ready(function () {
                 // ajout d'un "handler" sur le clic du bouton de connexion
@@ -214,6 +238,13 @@
                     console.log('Click sur le bouton "S\'inscrire"');
                     // appel de la fonction connexion
                     inscription();
+                });
+                
+                $('#oubli').on('click', function () {
+                    // affichage pour debugage dans la console javascript du navigateur
+                    console.log('Click sur mdpOublie');
+                    // appel de la fonction connexion
+                    mdpOublie();
                 });
             });
             

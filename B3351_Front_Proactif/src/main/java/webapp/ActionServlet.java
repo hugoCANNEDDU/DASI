@@ -27,6 +27,7 @@ import webapp.action.actionDemanderIntervention;
 import webapp.action.actionInscrire;
 import webapp.action.actionInterventionJour;
 import webapp.action.actionListeInterventionsSimple;
+import webapp.action.actionMdpOublie;
 import webapp.action.actionRecupererInfoClient;
 import webapp.action.actionRecupererInfoEmploye;
 import webapp.action.actionRecupererIntervention;
@@ -40,6 +41,7 @@ import webapp.serialisation.retourInfoEmploye;
 import webapp.serialisation.retourIntervention;
 import webapp.serialisation.retourListeIntervention;
 import webapp.serialisation.retourListeInterventionsSimple;
+import webapp.serialisation.retourMdpOublie;
 
 /**
  *
@@ -127,6 +129,11 @@ public class ActionServlet extends HttpServlet {
                 action = new actionInterventionJour();
                 serialisation = new retourListeIntervention();
                 break; 
+            case "mdpOublie":
+                action = new actionMdpOublie();
+                serialisation = new retourMdpOublie();
+                break;    
+            
         }
         
         if(action==null){
