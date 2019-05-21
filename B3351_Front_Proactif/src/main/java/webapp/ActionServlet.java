@@ -10,16 +10,12 @@ package webapp;
 
 import dao.JpaUtil;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import static modele.service.Service.Authentification;
-import static modele.service.Service.trouverEmployeParMail;
 import javax.servlet.http.HttpSession;
-import modele.metier.Employe;
 import webapp.action.Action;
 import webapp.action.actionCloturerIntervention;
 import webapp.action.actionConnecter;

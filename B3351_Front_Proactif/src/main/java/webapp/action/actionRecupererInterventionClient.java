@@ -23,7 +23,6 @@ import modele.service.Service;
 public class actionRecupererInterventionClient extends Action{
     @Override
     public boolean executer(HttpServletRequest request, HttpSession session){
-        String typeIntervention = (String) request.getParameter("typeIntervention");
         String dateString = (String) request.getParameter("date");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date date=null;
@@ -32,7 +31,6 @@ public class actionRecupererInterventionClient extends Action{
         }catch(Exception e){
         }
            
-        
         Client user = Service.trouverClientParMail((String) session.getAttribute("login"));
         List<Intervention> result = Service.listerInterventionsClient(user);
         List<Intervention> resultSelect=new ArrayList<Intervention>();

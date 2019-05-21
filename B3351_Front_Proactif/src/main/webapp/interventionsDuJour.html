@@ -14,8 +14,12 @@ and open the template in the editor.
         <style type="text/css">
             html, body { height: 100%; margin: 0; padding: 0; }
             h1 { text-align: center; }
-            #map { height: 90%;
-                   margin: 1% 1%}
+            #map { height: 88%;
+            }
+            #legende {
+                float:bottom;
+                text-align: center;
+            }
         </style>
     </head>
      <body>
@@ -58,7 +62,13 @@ and open the template in the editor.
     </nav>
     </div>
          
-    <div id="map"></div>
+    <div id="map"></div><br>
+    <div id="legende">
+        <img src="./IMG/carre.png" height="40" width="40"/> : Livraison   
+        <img src="./IMG/croix.png" height="40" width="40"/> : Incident   
+        <img src="./IMG/rond.png" height="40" width="40"/> : Animal   
+    </div>
+        
 
     <script type="text/javascript">
 
@@ -124,16 +134,26 @@ and open the template in the editor.
                 var position = {lat: 45.782122, lng: 4.872735};
 
                 $.each(data.intervention,function(i,intervention){
-                    console.log('coucou');
-                    var iconImage = null;
+                    var type = intervention.type;
+                    console.log(type);
+                    if(type==='Animal'){
+                        var iconImage={url: './IMG/rond.png', scaledSize: new google.maps.Size(32, 32)};
+                    }else if(type==='Incident'){
+                        var iconImage={url: './IMG/croix.png', scaledSize: new google.maps.Size(32, 32)};
+                    }else if (type==='Livraison'){
+                        var iconImage={url: './IMG/carre.png', scaledSize: new google.maps.Size(32, 32)};
+                    }
+                        
                     var marker= new google.maps.Marker({
                         map : googleMapInstance,
                         position: {lat: intervention.lat, lng: intervention.lng},
-                        title: 'Endroit #' + i,
+                        title: 'lieu #' + i,
                         icon: iconImage
+                        
                     });
 
-                    attachInfoWindow(marker, infowindow,'Type :'+intervention.type);
+                    attachInfoWindow(marker, infowindow,'Type : '+intervention.type+'<br> Statut : '+intervention.statut+'<br> Commentaire : '+
+                            intervention.commentaire+'<br> Description : '+intervention.description+'<br>');
                 });
             });
         }
